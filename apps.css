@@ -3,14 +3,14 @@
   font-style: normal;
   font-weight: normal;
   src: local("Avenir Next Rounded Pro Medium"),
-    url(/fonts/AvenirNextRoundedProMedium.woff) format("woff");
+    url(./fonts/AvenirNextRoundedProMedium.woff) format("woff");
 }
 @font-face {
   font-family: "Avenir Next Rounded Pro Regular";
   font-style: normal;
   font-weight: normal;
   src: local("Avenir Next Rounded Pro Regular"),
-    url(/fonts/AvenirNextRoundedProRegular.woff) format("woff");
+    url(./fonts/AvenirNextRoundedProRegular.woff) format("woff");
 }
 body {
   margin: 0;
@@ -22,7 +22,7 @@ a {
 /* Aquí se cambia el bakground */
 .o-container-apps {
   position: absolute;
-  background-image: url(/images/bg.jpg);
+  background-image: url(./images/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -38,7 +38,7 @@ a {
 /* Aquí se cambia la capa que cubre el background */
 .layer {
   position: absolute;
-  background: url(/images/layer.png);
+  background: url(./images/layer.png);
   width: 100%;
   height: 100vh;
   top: 0;
