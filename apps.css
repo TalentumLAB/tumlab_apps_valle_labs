@@ -12,104 +12,124 @@
   src: local("Avenir Next Rounded Pro Regular"),
     url(./fonts/AvenirNextRoundedProRegular.woff) format("woff");
 }
+@font-face {
+  font-family: "Montserrat-Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Montserrat-Regular"),
+    url(./fonts/Montserrat-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Montserrat-Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Montserrat-Medium"),
+    url(./fonts/Montserrat-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Montserrat-Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Montserrat-Bold"),
+    url(./fonts/Montserrat-Bold.ttf) format("truetype");
+}
 body {
   margin: 0;
   padding: 0;
-  background-image: url(./images/bg.jpg);
+  background: #189cd9;
 }
 a {
   text-decoration: none;
 }
-/* Aquí se cambia el bakground */
-.o-container-apps {
-  position: fixed;
-  height: 100vh;
+
+.container nav {
   width: 100%;
+  height: 3rem;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  box-sizing: border-box;
+}
+.container main {
+  /* background-color: yellow; */
+  height: calc(100vh - 3rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  margin-top: 8%;
+  padding: 0 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logo p {
+  color: #ffffff;
+  font-family: "Montserrat-Regular";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  letter-spacing: 0.55px;
+  margin-top: 2rem;
+}
+.container__cards {
+  width: 100%;
+  margin-bottom: 2rem;
+  /* background-color: #ffffff; */
+}
+.container__cards h4 {
+  text-align: center;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: -1;
-  /* filter: blur(5px); */
+  margin: 0 0 25px 0;
+  font-family: "Montserrat-Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  letter-spacing: 0.55px;
+  color: #ffffff;
 }
-/* Aquí se cambia la capa que cubre el background */
-.layer {
-  position: absolute;
-  background: url(./images/layer.png);
+
+.cards_slice {
   width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  opacity: 1;
-  z-index: -1;
-
-  opacity: 0.8;
-  filter: blur(25px);
+  /* background-color: #819eac; */
+  box-sizing: border-box;
+  padding: 0 4%;
+  display: flex;
+  overflow-x: hidden;
 }
-.o-container-grid {
+
+.cards_slice .card {
+  width: 17.25rem;
+  height: 9.25rem;
+  background: #ffffff;
+  box-shadow: 0px 7.2918px 21.8754px rgba(129, 129, 129, 0.15);
+  border-radius: 9.11475px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2.375rem;
+  padding: 0 0.7rem;
+  box-sizing: border-box;
+}
+.cards_slice .card img {
   width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.o-content-grid {
-  /* background: chocolate; */
-  width: 95%;
-  height: auto;
-
-  display: flex;
-  flex-direction: column;
-  /* background-color: aqua; */
-}
-.o-app-grid {
-  display: grid;
-  gap: 1.3rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.o-content-cards {
-  /* background-color: tomato; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 1.8rem;
-}
-.o-content-cards p {
-  font-size: 1.5em;
-  /* letter-spacing: 0.1em; */
-  font-family: "Avenir Next Rounded Pro Medium";
-  color: white;
-  /* padding-bottom: 1em; */
-}
-.o-card-app {
-  /* background: #fafafa; */
-  width: auto;
-  height: auto;
-  /* margin-bottom: 0.8rem; */
-}
-.o-card {
-  /* background-color: thistle; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-@media (max-width: 800px) {
-  .o-container-apps {
+@media (max-width: 1200px) {
+  .logo {
+    margin-top: 10%;
+    padding: 0 8%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
   }
-  .o-container-grid {
-    display: flex;
-    flex-direction: column;
-    /* align-items: flex-start; */
-    justify-content: flex-start;
-    /* background-color: aqua; */
+  .logo img {
+    width: 50%;
   }
 }
