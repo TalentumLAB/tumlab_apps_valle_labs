@@ -34,9 +34,10 @@
     url(./fonts/Montserrat-Bold.ttf) format("truetype");
 }
 body {
+  font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
-  background: #189cd9;
+  background: #0f78a9;
 }
 a {
   text-decoration: none;
@@ -97,11 +98,11 @@ a {
 
 .cards_slice {
   width: 100%;
-  /* background-color: #819eac; */
+  /*  background-color: #819eac; */
   box-sizing: border-box;
   padding: 0 4%;
   display: flex;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .cards_slice .card {
@@ -116,9 +117,37 @@ a {
   margin-right: 2.375rem;
   padding: 0 0.7rem;
   box-sizing: border-box;
+  cursor: pointer;
 }
+
+.cards_slice .card:hover {
+  animation: pulse 1s;
+  filter: drop-shadow(0 7.29px 21.88px rgba(129, 129, 129, 0.15));
+}
+
+#content {
+  padding: 0 4%;
+}
+
 .cards_slice .card img {
   width: 100%;
+}
+
+.container_content {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.container_left {
+  width: 50%;
+}
+
+.container_right{
+  background: url('/images/wikipedia_bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50%;
 }
 
 @media (max-width: 1200px) {
