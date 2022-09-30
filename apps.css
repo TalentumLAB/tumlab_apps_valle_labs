@@ -142,12 +142,52 @@ a {
   width: 50%;
 }
 
-.container_right{
-  background: url('/images/wikipedia_bg.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+.container_right {
   width: 50%;
+}
+
+.container_right img {
+  position: absolute;
+  top: -22px;
+  right: 2px;
+}
+
+.p_container_left {
+  /* Desktop/regular/18px */
+
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  /* or 25px */
+
+  letter-spacing: 0.55px;
+
+  /* Text */
+
+  color: #272626;
+}
+
+/* .container_left img {
+  margin-left: -4rem;
+} */
+
+.btn_go {
+  background: #0c5eaa;
+  border-radius: 4px;
+  padding: 10px 24px 10px 24px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  gap: 10px;
+  width: fit-content;
+}
+
+.btn_go:hover{
+  background: #127ADA;
 }
 
 @media (max-width: 1200px) {
