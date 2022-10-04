@@ -5,6 +5,7 @@
   src: local("Avenir Next Rounded Pro Medium"),
     url(./fonts/AvenirNextRoundedProMedium.woff) format("woff");
 }
+
 @font-face {
   font-family: "Avenir Next Rounded Pro Regular";
   font-style: normal;
@@ -12,6 +13,7 @@
   src: local("Avenir Next Rounded Pro Regular"),
     url(./fonts/AvenirNextRoundedProRegular.woff) format("woff");
 }
+
 @font-face {
   font-family: "Montserrat-Regular";
   font-style: normal;
@@ -19,6 +21,7 @@
   src: local("Montserrat-Regular"),
     url(./fonts/Montserrat-Regular.ttf) format("truetype");
 }
+
 @font-face {
   font-family: "Montserrat-Medium";
   font-style: normal;
@@ -26,6 +29,7 @@
   src: local("Montserrat-Medium"),
     url(./fonts/Montserrat-Medium.ttf) format("truetype");
 }
+
 @font-face {
   font-family: "Montserrat-Bold";
   font-style: normal;
@@ -33,12 +37,14 @@
   src: local("Montserrat-Bold"),
     url(./fonts/Montserrat-Bold.ttf) format("truetype");
 }
+
 body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
   background: #0f78a9;
 }
+
 a {
   text-decoration: none;
 }
@@ -52,6 +58,7 @@ a {
   padding-left: 1rem;
   box-sizing: border-box;
 }
+
 .container main {
   /* background-color: yellow; */
   height: calc(100vh - 3rem);
@@ -60,6 +67,7 @@ a {
   justify-content: space-between;
   align-items: center;
 }
+
 .logo {
   margin-top: 8%;
   padding: 0 8%;
@@ -67,6 +75,7 @@ a {
   flex-direction: column;
   align-items: center;
 }
+
 .logo p {
   color: #ffffff;
   font-family: "Montserrat-Regular";
@@ -77,11 +86,13 @@ a {
   letter-spacing: 0.55px;
   margin-top: 2rem;
 }
+
 .container__cards {
   width: 100%;
   margin-bottom: 2rem;
   /* background-color: #ffffff; */
 }
+
 .container__cards h4 {
   text-align: center;
   padding: 0;
@@ -186,7 +197,7 @@ a {
   width: fit-content;
 }
 
-.btn_go:hover{
+.btn_go:hover {
   background: #127ADA;
 }
 
@@ -198,7 +209,81 @@ a {
     flex-direction: column;
     align-items: center;
   }
+
   .logo img {
     width: 50%;
+  }
+}
+
+@media (max-width: 426px) {
+  #cards_slice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    margin-top: 5% !important;
+  }
+
+  .cards_slice .card {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .container_right img {
+    top: 67px;
+    left: 26px;
+    width: 24rem;
+  }
+
+  .title_img {
+    margin-top: 22rem;
+    width: 16rem;
+    margin-left: 4rem;
+  }
+
+  .title_img_ {
+    margin-top: 22rem;
+    width: 16rem;
+    margin-left: 7rem;
+  }
+
+  .container_left {
+    width: 100%;
+  }
+
+  .container_right {
+    width: 0;
+  }
+
+  .p_container_left {
+    color: #272626
+  }
+
+  .cards_slice_responsive {
+    margin-top: 3rem;
+  }
+
+  .body_responsive {
+    background: white !important;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .logo {
+    margin-top: 2%;
+  }
+}
+
+@media (max-width: 1440px) {
+  .logo {
+    margin-top: 2%;
+  }
+
+  .cards_slice .card {
+    width: 15.25rem;
+    height: 8.25rem;
   }
 }

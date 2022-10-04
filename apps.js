@@ -74,8 +74,20 @@ const showApps = () => {
   });
 };
 
+const responsive = () => {
+  if (window.screen.width < 426) {
+    if (!document.getElementById("h4_cards").getAttribute("display")) {
+      document
+        .getElementById("cards_slice")
+        .classList.add("cards_slice_responsive");
+      document.body.classList.add("body_responsive");
+    }
+  }
+};
+
 //Muestra el contenido al presionar la aplicación
 const onClickApp = (data) => {
+  responsive();
   const key = data.getAttribute("key");
   document.getElementById("logo").style.display = "none";
   document.getElementById("h4_cards").style.display = "none";
@@ -89,11 +101,13 @@ const onClickApp = (data) => {
         <div class="container_left">
         ${
           app.image_title
-            ? `<img src=${app.image_title} alt="Wikipedia" />`
-            : `<h1> ${app.title} </h1>`
+            ? `<img src=${app.image_title} class="title_img" alt="Wikipedia" />`
+            : `<h1 class="title_img_"> ${app.title} </h1>`
         }
         <p class="p_container_left">${app.description}</p>
-        <a class="btn_go" href="${app.url}" target="_blank"> Iniciar <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a class="btn_go" href="${
+          app.url
+        }" target="_blank"> Iniciar <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8.75 3.25L13.25 7.75L8.75 12.25M2.75 7.75H13.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         </a>
