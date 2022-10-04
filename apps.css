@@ -113,6 +113,7 @@ a {
   box-sizing: border-box;
   padding: 0 4%;
   display: flex;
+  margin-top: 1rem;
   /* overflow-x: hidden; */
 }
 
@@ -161,6 +162,7 @@ a {
   position: absolute;
   top: -22px;
   right: 2px;
+  width: 31rem;
 }
 
 .p_container_left {
@@ -234,7 +236,7 @@ a {
   .container_right img {
     top: 67px;
     left: 26px;
-    width: 24rem;
+    width: 34rem;
   }
 
   .title_img {
