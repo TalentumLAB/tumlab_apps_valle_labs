@@ -75,14 +75,45 @@ const showApps = () => {
 };
 
 const responsive = () => {
-  if (window.screen.width < 426) {
+  if (window.screen.width <= 426) {
     if (!document.getElementById("h4_cards").getAttribute("display")) {
+      document
+        .getElementById("cards_slice")
+        .classList.add("cards_slice_responsive");
+      document.body.classList.add("body_responsive");
+
+      document
+        .getElementById("container__cards")
+        .classList.add("container__cards_responsive");
+
+      document.getElementById("svg_arrow").style.display = "inline";
+    }
+    if (!document.getElementById("container__cards").getAttribute("display")) {
       document
         .getElementById("cards_slice")
         .classList.add("cards_slice_responsive");
       document.body.classList.add("body_responsive");
     }
   }
+
+  if (window.screen.width <= 768) {
+    if (!document.getElementById("h4_cards").getAttribute("display")) {
+      document.body.classList.add("body_responsive");
+    }
+  }
+};
+
+//Devolverse al menú principal
+const backToApps = () => {
+  document.getElementById("logo").style.display = "flex";
+  document.getElementById("h4_cards").style.display = "in line";
+  document.body.classList.remove("body_responsive");
+  document.getElementById("content").innerHTML = "";
+  document.body.style.background = "#0f78a9";
+  document.getElementById("svg_arrow").style.display = "none";
+  document
+    .getElementById("container__cards")
+    .classList.remove("container__cards_responsive");
 };
 
 //Muestra el contenido al presionar la aplicación
