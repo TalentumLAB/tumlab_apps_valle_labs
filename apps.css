@@ -218,6 +218,10 @@ a {
 }
 
 @media (max-width: 426px) {
+  .btn_go{
+    width: 49%;
+    justify-content: center;
+  }
   #cards_slice {
     display: flex;
     flex-direction: column;
@@ -231,12 +235,14 @@ a {
   .cards_slice .card {
     margin-right: 0;
     margin-bottom: 1rem;
+    width: 100%;
+    height: 11.25rem;
   }
 
   .container_right img {
     top: 67px;
     left: 26px;
-    width: 34rem;
+    width: 24rem;
   }
 
   .title_img {
