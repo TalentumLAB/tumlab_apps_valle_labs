@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tumlab</title>
+    <link rel="stylesheet" href="./style/app.css" />
+    <!-- ------------------------------- Animate ------------------------------- -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- ---------------------------- Google Fonts ----------------------------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ------------------------------ Bootstrap ------------------------------ -->
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <script src="app.js"></script>
+    <header>
+      <img
+        class="logo"
+        src="/img/logo.png"
+        onclick="location.href='index.html'"
+        alt="Logo Tumlab"
+        srcset=""
+      />
+    </header>
+    <main class="app_page">
+      <svg
+        class="arrow"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        onclick="location.href='index.html'"
+      >
+        <path
+          d="M10.875 19.125L4.125 12.375L10.875 5.625M19.875 12.375L4.125 12.375"
+          stroke="#0C5EAA"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+
+      <div class="container-fluid container_info">
+        <div class="row" id="row_info">
+          <script>
+            showAppDetails();
+          </script>
+        </div>
+      </div>
+      <div class="container-fluid text-center container_cards">
+        <div class="row" id="row_cards">
+          <script>
+            showApps();
+          </script>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
