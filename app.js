@@ -98,7 +98,7 @@ const showAppDetails = (data) => {
       appContainer.innerHTML = `
       <div class="col-6 animate__animated animate__fadeIn animate__slower col-left">
         <img src="${app.title}" class="mb-4 img_title" alt="" />
-        <h5 class="description mb-4">
+        <h5 class="description mb-5">
          ${app.description}
         </h5>
         <a class="btn_go" href="${app.url}">Iniciar</a>

@@ -165,7 +165,7 @@ header .logo {
     padding: 0;
     gap: 18px;
     flex-direction: column;
-    max-height: 20rem;
+    height: 20rem;
   }
 
   .logo_home {
@@ -177,15 +177,83 @@ header .logo {
   }
 }
 
+@media (max-width: 429px) {
+  #row_cards {
+    height: 25rem !important;
+  }
+  .img-thumbnail {
+    height: 12.5rem !important;
+  }
+}
+
+@media (max-width: 415px) {
+  #row_cards {
+    height: 23rem !important;
+  }
+}
+
+@media (max-width: 391px) {
+  #row_cards {
+    height: 20rem !important;
+  }
+  .img-thumbnail {
+    height: 11.5rem !important;
+  }
+}
+
+@media (max-width: 376px) {
+  #row_cards {
+    height: 18rem !important;
+  }
+  .img-thumbnail {
+    height: 11rem !important;
+  }
+}
+
+
+@media (max-width: 361px) {
+  .img-thumbnail {
+    height: 10.7rem !important;
+  }
+  #row_cards {
+    height: 15rem !important;
+  }
+}
+
+/* @media (max-width: 415px) {
+  #row_cards {
+    max-height: 18rem !important;
+  }
+} */
+
+/* @media (max-width: 425px) {
+  #row_cards {
+    max-height: 32rem;
+  }
+}
+
+@media (max-width: 412px) {
+  #row_cards {
+    max-height: 28rem !important;
+  }
+}
+
+@media (max-width: 393px) {
+  #row_cards {
+    max-height: 24rem !important;
+  }
+}
+
 @media (max-width: 376px) {
   #row_cards {
     max-height: 20rem !important;
   }
 }
 
-
-@media (max-width: 414px) {
+@media (max-width: 360px) {
   #row_cards {
-    max-height: 32rem;
+    max-height: 25rem !important;
   }
 }
+
+ */
