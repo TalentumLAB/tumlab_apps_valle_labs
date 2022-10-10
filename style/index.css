@@ -176,3 +176,16 @@ header .logo {
     margin: 0;
   }
 }
+
+@media (max-width: 376px) {
+  #row_cards {
+    max-height: 20rem !important;
+  }
+}
+
+
+@media (max-width: 414px) {
+  #row_cards {
+    max-height: 32rem;
+  }
+}

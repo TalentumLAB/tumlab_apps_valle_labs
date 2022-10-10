@@ -97,7 +97,7 @@ const showAppDetails = (data) => {
     if (app.key == key) {
       appContainer.innerHTML = `
       <div class="col-6 animate__animated animate__fadeIn animate__slower col-left">
-        <img src="${app.title}" class="mb-2 img_title" alt="" />
+        <img src="${app.title}" class="mb-4 img_title" alt="" />
         <h5 class="description mb-4">
          ${app.description}
         </h5>
