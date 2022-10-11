@@ -1,10 +1,8 @@
 body {
   font-family: "Montserrat", sans-serif !important;
-  background: linear-gradient(
-    0.84deg,
-    #393939 0.89%,
-    rgba(249, 243, 243, 0) 47.35%
-  );
+  background: linear-gradient(0.84deg,
+      #393939 0.89%,
+      rgba(249, 243, 243, 0) 47.35%);
   overflow: hidden;
   background-color: #f8f7f7 !important;
 }
@@ -90,9 +88,11 @@ header .logo {
   .title_explore {
     margin-top: 4rem;
   }
+
   .description {
     font-size: 18px;
   }
+
   #row_cards {
     margin-top: -11rem;
     gap: 5rem;
@@ -101,6 +101,7 @@ header .logo {
   .img_col img {
     width: 95%;
   }
+
   .col-left {
     width: 58.33333333% !important;
   }
@@ -112,13 +113,43 @@ header .logo {
   }
 }
 
+@media (max-width: 1280px) {
+  #row_cards {
+    gap: 6rem;
+    margin-top: -7.5rem;
+  }
+
+  .container_info {
+    padding: 4rem 5rem !important;
+  }
+
+  .col-left {
+    margin-top: -3rem !important;
+  }
+
+  .description.mb-5 {
+    margin-bottom: 1rem !important;
+
+  }
+
+  .img_title {
+    width: 50%;
+  }
+
+  .img-thumbnail {
+    height: 8rem !important;
+  }
+}
+
 @media (max-width: 1200px) {
   .img_title {
     width: 50%;
   }
+
   .description {
     font-size: 16px;
   }
+
   #row_cards {
     margin-top: -7rem;
     gap: 8rem;
@@ -135,9 +166,11 @@ header .logo {
   .col-left {
     width: 100% !important;
   }
+
   .img_col {
     display: none;
   }
+
   #row_cards {
     gap: 10rem;
   }
@@ -155,39 +188,49 @@ header .logo {
     background: none;
     overflow: auto;
   }
+
   header {
     text-align: center;
   }
+
   #row_cards {
     display: none;
   }
+
   .img_title {
     width: 50%;
   }
+
   .container_info {
     padding: 1rem !important;
   }
+
   #row_info {
     flex-direction: column-reverse;
     align-items: center;
     text-align: center;
   }
+
   .img_col {
     display: block;
     width: 86% !important;
     margin-top: 5rem !important;
   }
+
   .img_col img {
     width: 100%;
   }
+
   .description {
     color: #272626;
     text-align: initial;
   }
+
   .btn_go {
     width: 100%;
     justify-content: center;
   }
+
   .arrow {
     display: block;
     position: absolute;
