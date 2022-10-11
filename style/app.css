@@ -125,6 +125,12 @@ header .logo {
   }
 }
 
+@media (max-width: 1024px) {
+  #row_cards {
+    gap: 9rem;
+  }
+}
+
 @media (max-width: 992px) {
   .col-left {
     width: 100% !important;
