@@ -5,6 +5,7 @@ body {
       rgba(249, 243, 243, 0) 47.35%);
   overflow: hidden;
   background-color: #f8f7f7 !important;
+  height: 100vh
 }
 
 header {
