@@ -46,7 +46,7 @@ const addApps = [
     title: "",
     cover: "",
     description: "",
-    url: "https://www.google.com",
+    url: "https://colchadetesoros.com/",
   },
   {
     key: 6,
@@ -55,7 +55,7 @@ const addApps = [
     title: "",
     cover: "",
     description: "",
-    url: "https://www.google.com",
+    url: "https://vallemagico.co/",
   },
   {
     key: 7,
@@ -132,7 +132,7 @@ const showAppDetails = () => {
         </h5>
         </div>
         <div> 
-        <a class="btn_go" href="${app.url}">Iniciar</a>
+        <a class="btn_go" href="${app.url}" target="_blank">Iniciar</a>
         </div>
       </div>
       <div class="col-5 img_col animate__animated animate__fadeIn animate__slower" >
