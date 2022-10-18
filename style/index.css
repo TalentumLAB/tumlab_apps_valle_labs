@@ -38,6 +38,9 @@ header {
   width: 100%;
   background: white;
   padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 header .logo {
@@ -118,7 +121,6 @@ section {
 }
 
 .arrow {
-  position: absolute;
   display: none;
 }
 .description {
@@ -186,8 +188,8 @@ section {
   }
 }
 
-/** DESCOMENTAR SI HAY MÁS DE 4 CARDS */
-/* @media (max-width: 1600px) {
+/** DESCOMENTAR SI HAY MÁS DE 4 CARDS  OPTIMIZAR DESPUÉS*/
+@media (max-width: 1600px) {
   .body_info {
     height: 114vh;
   }
@@ -195,7 +197,7 @@ section {
     height: 107vh;
   } 
 }
-*/
+
 @media (max-width: 991.98px) {
   #row_cards {
     justify-content: center;
@@ -219,6 +221,12 @@ section {
 }
 
 @media (max-width: 575.98px) {
+  section {
+    height: 100%;
+  }
+  header {
+    text-align: center;
+  }
   #row_info {
     flex-direction: column-reverse;
     height: 100%;
@@ -276,10 +284,11 @@ section {
   .img_title {
     width: 100%;
   }
-  .arrow {
+  .arrow_info {
     display: block;
     left: 14px;
     top: 61px;
     z-index: 1;
+    position: fixed;
   }
 }

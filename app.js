@@ -42,7 +42,7 @@ const addApps = [
   {
     key: 5,
     thumbnail: "./img/colcha/colcha_thumbnail.png",
-    is_show: false,
+    is_show: true,
     title: "",
     cover: "",
     description: "",
@@ -51,7 +51,7 @@ const addApps = [
   {
     key: 6,
     thumbnail: "./img/valle/valle_thumbnail.png",
-    is_show: false,
+    is_show: true,
     title: "",
     cover: "",
     description: "",
@@ -96,7 +96,9 @@ const saveKeyApp = (data) => {
   const rectangle = document.getElementById("rectangle_bg");
   const home_section = document.getElementById("home_section");
   const container_cards = document.getElementById("container_cards");
+  const arrow = document.getElementById("arrow");
 
+  arrow.classList.add("arrow_info");
   document.body.classList.add("body_info");
   home_section.classList.add("home_section_info");
   container_cards.classList.add("container_cards_info");
