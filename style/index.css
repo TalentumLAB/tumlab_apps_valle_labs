@@ -143,6 +143,7 @@ section {
 
 #row_info {
   height: 420px;
+  align-items: center;
 }
 
 .btn_go {
