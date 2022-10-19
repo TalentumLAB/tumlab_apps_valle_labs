@@ -44,8 +44,8 @@ const addApps = [
     thumbnail: "./img/colcha/colcha_thumbnail.png",
     is_show: true,
     title: "",
-    cover: "",
-    description: "",
+    cover: "./img/colcha/colcha_cover.png",
+    description: "City Know pro 2 es la segunda versión del juego educativo City Know pro, donde los estudiantes desde transición hasta grado noveno aprenden jugando minijuegos, Inglés, Matemáticas, Lenguaje, competencia ciudadana son las distintas disciplinas que el niño aprenderá jugando, el juego esta diseñado con una accesibilidad fluida, así cualquier niño sin importar su discapacidad puede aprender jugando.",
     url: "https://colchadetesoros.com/",
   },
   {
@@ -53,8 +53,8 @@ const addApps = [
     thumbnail: "./img/valle/valle_thumbnail.png",
     is_show: true,
     title: "",
-    cover: "",
-    description: "",
+    cover: "./img/valle/valle_cover.png",
+    description: "Valle Mágico es una propuesta educativa inclusiva para el desarrollo de las capacidades y talentos de los estudiantes de las 149 instituciones educativas oficiales, de los 34 municipios no certificados del departamento del Valle del Cauca. Este proyecto garantiza una atención educativa con calidad, en el marco de la educación inclusiva correspondiente al decreto 366 en el artículo 10 para las prácticas educativas inclusivas.",
     url: "https://vallemagico.co/",
   },
   {
@@ -65,7 +65,17 @@ const addApps = [
     cover: "./img/superset/superset_cover.png",
     description:
       "Superset es rápido, liviano, intuitivo y está cargado de opciones que facilitan a los usuarios de todos los conjuntos de habilidades explorar y visualizar sus datos, desde simples gráficos de líneas hasta gráficos geoespaciales altamente detallados.",
-    url: "https://www.google.com",
+    url: "https://superset.apache.org/",
+  },
+  {
+    key: 8,
+    thumbnail: "./img/scratch/scratch_thumbnail.png",
+    is_show: true,
+    title: "./img/scratch/scratch_title.png",
+    cover: "./img/scratch/scratch_cover.png",
+    description:
+      "Scratch es la comunidad de programación para niños y niñas más grande del mundo, y un lenguaje de programación con una interfaz sencilla que permite a los jóvenes crear historias digitales, juegos y animaciones. Scratch está diseñado, desarrollado y moderado por la Fundación Scratch, una organización sin ánimo de lucro. Scratch promueve el pensamiento computacional y las habilidades en resolución de problemas; enseñanza y aprendizaje creativos, auto expresión y colaboración; e igualdad en informática.",
+    url: "https://scratch.mit.edu/",
   },
 ];
 
