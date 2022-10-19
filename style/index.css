@@ -78,7 +78,6 @@ section {
 
 .img-thumbnail {
   max-width: 274px !important;
-  height: -webkit-fill-available !important;
 }
 
 .logo_home {
