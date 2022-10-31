@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  portal_cautivo:
+    build:
+      context: .
+    container_name: talentum_portal_cautivo
+    restart: always
+    ports:
+      - 80:80
