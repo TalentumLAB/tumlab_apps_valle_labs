@@ -8,7 +8,7 @@ const addApps = [
     cover: "./img/wiki/wiki_cover.png",
     description:
       "Wikipedia es una página web para realizar consultas online de contenido abierto, una web que almacena, recopila y transmite información de manera totalmente estructurada.",
-    url: "http://tumlab.local",
+    url: "http://tumlab.local:8087/wikipedia_es_all_nopic_2022-10/A/Wikipedia:Offline",
   },
   {
     key: 2,
@@ -28,7 +28,7 @@ const addApps = [
     cover: "./img/simuladores/simuladores_cover.png",
     description:
       "Simulaciones interactivas en Física, Química, Ciencias basada en el proyecto de simulaciones interactivas de PhET de la Universidad de Colorado en Boulder. Estos recursos nacen de la investigación educativa extensiva e involucran a los estudiantes mediante un ambiente intuitivo y similar a un juego, en donde aprenden explorando y descubren.",
-    url: "http://tumlab.local",
+    url: "http://tumlab.local:8087/phet_es-pe_2021-08/A/index.html",
   },
   {
     key: 4,
@@ -75,7 +75,7 @@ const addApps = [
     cover: "./img/scratch/scratch_cover.png",
     description:
       "Scratch es la comunidad de programación para niños y niñas más grande del mundo, y un lenguaje de programación con una interfaz sencilla que permite a los jóvenes crear historias digitales, juegos y animaciones. Scratch está diseñado, desarrollado y moderado por la Fundación Scratch, una organización sin ánimo de lucro. Scratch promueve el pensamiento computacional y las habilidades en resolución de problemas; enseñanza y aprendizaje creativos, auto expresión y colaboración; e igualdad en informática.",
-    url: "http://tumlab.local",
+    url: "http://192.168.4.1:8086",
   },
 ];
 
