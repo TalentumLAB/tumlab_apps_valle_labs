@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  portal_cautivo:
+    image: bilinguismotalentum/tumlab-apps:1.0.1
+    container_name: tumlab_apps
+    restart: always
+    ports:
+      - 80:80
