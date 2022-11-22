@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   tumlab_apps:
-    image: bilinguismotalentum/tumlab-apps:1.0.1
+    image: bilinguismotalentum/tumlab-apps:1.0.2
     container_name: tumlab_apps
     restart: always
     ports:
