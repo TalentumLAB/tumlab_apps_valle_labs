@@ -77,6 +77,16 @@ const addApps = [
       "Scratch es la comunidad de programación para niños y niñas más grande del mundo, y un lenguaje de programación con una interfaz sencilla que permite a los jóvenes crear historias digitales, juegos y animaciones. Scratch está diseñado, desarrollado y moderado por la Fundación Scratch, una organización sin ánimo de lucro. Scratch promueve el pensamiento computacional y las habilidades en resolución de problemas; enseñanza y aprendizaje creativos, auto expresión y colaboración; e igualdad en informática.",
     url: "http://192.168.4.1:8086",
   },
+  {
+    key: 9,
+    thumbnail: "./img/sistema_de_informacion/sistema_de_informacion.svg",
+    is_show: true,
+    title: "./img/sistema_de_informacion/sistema_de_informacion_title.svg",
+    cover: "./img/sistema_de_informacion/sistema_de_informacion_cover.png",
+    description:
+      "El sistema de información es una de herramienta para reportes de la plataforma de contenido pedagogico que permite visualizar indicadores, desplegar gráficas y generar reportes sobre la información del estado y avance de los usuarios en las actividades elaboradas en los diferentes cursos de la plataforma.",
+    url: "http://tumlab.local:3000",
+  },
 ];
 
 let keySelected = "";
