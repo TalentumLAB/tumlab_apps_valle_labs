@@ -32,33 +32,6 @@ const addApps = [
   },
   {
     key: 4,
-    thumbnail: "./img/moodle/moodle_thumbnail.png",
-    is_show: false,
-    title: "",
-    cover: "",
-    description: "",
-    url: "http://tumlab.local",
-  },
-  {
-    key: 5,
-    thumbnail: "./img/colcha/colcha_thumbnail.png",
-    is_show: false,
-    title: "",
-    cover: "./img/colcha/colcha_cover.png",
-    description: "City Know pro 2 es la segunda versión del juego educativo City Know pro, donde los estudiantes desde transición hasta grado noveno aprenden jugando minijuegos, Inglés, Matemáticas, Lenguaje, competencia ciudadana son las distintas disciplinas que el niño aprenderá jugando, el juego esta diseñado con una accesibilidad fluida, así cualquier niño sin importar su discapacidad puede aprender jugando.",
-    url: "http://tumlab.local",
-  },
-  {
-    key: 6,
-    thumbnail: "./img/valle/valle_thumbnail.png",
-    is_show: false,
-    title: "",
-    cover: "./img/valle/valle_cover.png",
-    description: "Valle Mágico es una propuesta educativa inclusiva para el desarrollo de las capacidades y talentos de los estudiantes de las 149 instituciones educativas oficiales, de los 34 municipios no certificados del departamento del Valle del Cauca. Este proyecto garantiza una atención educativa con calidad, en el marco de la educación inclusiva correspondiente al decreto 366 en el artículo 10 para las prácticas educativas inclusivas.",
-    url: "http://tumlab.local",
-  },
-  {
-    key: 7,
     thumbnail: "./img/superset/superset_thumbnail.png",
     is_show: true,
     title: "./img/superset/superset_title.png",
@@ -68,7 +41,7 @@ const addApps = [
     url: "http://tumlab.local:8088",
   },
   {
-    key: 8,
+    key: 5,
     thumbnail: "./img/scratch/scratch_thumbnail.png",
     is_show: true,
     title: "./img/scratch/scratch_title.png",
@@ -78,7 +51,7 @@ const addApps = [
     url: "http://192.168.4.1:8086",
   },
   {
-    key: 9,
+    key: 6,
     thumbnail: "./img/sistema_de_informacion/sistema_de_informacion.svg",
     is_show: true,
     title: "./img/sistema_de_informacion/sistema_de_informacion_title.svg",
@@ -87,6 +60,26 @@ const addApps = [
       "El sistema de información es una de herramienta para reportes de la plataforma de contenido pedagogico que permite visualizar indicadores, desplegar gráficas y generar reportes sobre la información del estado y avance de los usuarios en las actividades elaboradas en los diferentes cursos de la plataforma.",
     url: "http://tumlab.local:3000",
   },
+  {
+    key: 7,
+    thumbnail: "./img/openstreetmap/card_openstreetmap.png",
+    is_show: true,
+    title: "./img/openstreetmap/title_openstreetmap.svg",
+    cover: "./img/openstreetmap/cover_openstreetmap.svg",
+    description:
+      "Plataforma para visualizacion de mapas con diversas funcionalidades como: busqueda de lugares, navegacion interactiva con el mapamundi, entre otras. Adicionalmente permite ver información sobre las vías de las ciudades más importantes.",
+    url: "http://tumlab.local:8081",
+  },
+  {
+    key: 8,
+    thumbnail: "./img/mediacms/card_mediacms.png",
+    is_show: true,
+    title: "./img/mediacms/title_mediacms.svg",
+    cover: "./img/mediacms/cover_mediacms.svg",
+    description:
+      "Description mediacms",
+    url: "http://tumlab.local:8082",
+  }  
 ];
 
 let keySelected = "";
