@@ -79,6 +79,16 @@ const addApps = [
     description:
       "Description mediacms",
     url: "http://tumlab.local:8082",
+  },
+  {
+    key: 9,
+    thumbnail: "./img/residuos/AGAU_CARD.png",
+    is_show: true,
+    title: "./img/residuos/AGAU_TITLE.png",
+    cover: "./img/residuos/AGAU_IMAGE.png",
+    description:
+      "Es un videojuego donde Agau, un robot viajero del tiempo, llega del año 2200 a enseñarnos a salvar el mundo de los residuos tecnológicos, a través de 4 estaciones con varias misiones podemos aprender qué hacer para reducir el impacto medioambiental de los residuos.",
+    url: "http://tumlab.local:8083/",
   }  
 ];
 
