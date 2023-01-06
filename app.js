@@ -89,7 +89,17 @@ const addApps = [
     description:
       "Es un videojuego donde Agau, un robot viajero del tiempo, llega del año 2200 a enseñarnos a salvar el mundo de los residuos tecnológicos, a través de 4 estaciones con varias misiones podemos aprender qué hacer para reducir el impacto medioambiental de los residuos.",
     url: "http://tumlab.local:8083/",
-  }  
+  },
+  {
+    key: 10,
+    thumbnail: "./img/simulators/SIMU_CARD.png",
+    is_show: true,
+    title: "./img/simulators/simu_title.png",
+    cover: "./img/simulators/simu_image.png",
+    description:
+      "Interactive simulations in Physics, Chemistry, Science based on the PhET Interactive Simulations project at the University of Colorado at Boulder. These resources stem from extensive educational research and engage students through an intuitive, game-like environment where they learn by exploring while practicing English.",
+    url: "http://tumlab.local:8087/phet_en_2023-01/A/index.html",
+  }    
 ];
 
 let keySelected = "";
