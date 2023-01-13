@@ -99,78 +99,94 @@ const addApps = [
     description:
       "Interactive simulations in Physics, Chemistry, Science based on the PhET Interactive Simulations project at the University of Colorado at Boulder. These resources stem from extensive educational research and engage students through an intuitive, game-like environment where they learn by exploring while practicing English.",
     url: "http://tumlab.local:8087/phet_en_2023-01/A/index.html",
-  }    
+  }
 ];
-
-let keySelected = "";
 
 //Muestra las aplicaciones activas en la pagina de inicio.
 const showApps = () => {
   addApps.map((app) => {
     if (app.is_show) {
-      const appContainer = document.getElementById("row_cards");
+      const appContainer = document.getElementById("row-cards");
       appContainer.innerHTML += `
-      <div class="col cards" key=${app.key} onclick=saveKeyApp(this)>
-      <img src=${app.thumbnail} class="img-thumbnail" alt="..." />
+      <div class="col-12 col-sm-6 col-md-3 mb-3 cursor-pointer d-flex card-app shadow-sm" onclick="showAppDetails(${app.key})">
+        <div class="bg-white w-100 p-3 rounded-4 d-inline-flex justify-content-center">
+          <img src="${app.thumbnail}" class="img-fluid card-img d-inline-block" alt="${app.title}" />
+        </div>
       </div>
       `;
     }
   });
 };
 
-//Guardar el key de la aplicación seleccionada
-const saveKeyApp = (data) => {
-  localStorage.setItem("keySelected", data.getAttribute("key"));
-  const container_info = document.getElementById("container_info");
-  const container_home = document.getElementById("container_home");
-  const title_explore = document.getElementById("title_explore");
-  const vector_left = document.getElementById("vector_left");
-  const vector_right = document.getElementById("vector_right");
-  const rectangle = document.getElementById("rectangle_bg");
-  const home_section = document.getElementById("home_section");
-  const container_cards = document.getElementById("container_cards");
-  const arrow = document.getElementById("arrow");
+const refresh = () => {
+  const rowsHome = document.getElementsByClassName('row-info-home');
+  const rowsApp = document.getElementsByClassName('row-info-apps');
 
-  arrow.classList.add("arrow_info");
-  document.body.classList.add("body_info");
-  home_section.classList.add("home_section_info");
-  container_cards.classList.add("container_cards_info");
+  for (let rowHome of rowsHome) {
+    rowHome.classList.remove('d-none');
+  }
+  for (let rowApp of rowsApp) {
+    rowApp.classList.add('d-none');
+  }
 
-  container_info.style.display = "block";
-  container_home.style.display = "none";
-  title_explore.style.display = "none";
-  vector_right.style.display = "none";
-  vector_left.style.display = "none";
-  rectangle.style.display = "none";
-
-  showAppDetails();
+  document.body.classList.remove('bg-light');
 };
 
 //Mostrar detalles de la aplicación
-const showAppDetails = () => {
-  const key = localStorage.getItem("keySelected");
+const showAppDetails = (key) => {
+  const appContainer = document.getElementById("row-info");
+  const appInfo = addApps.find((app) => app.key === key);
 
-  const appContainer = document.getElementById("row_info");
+  const rowsHome = document.getElementsByClassName('row-info-home');
+  const rowsApp = document.getElementsByClassName('row-info-apps');
 
-  addApps.map((app) => {
-    if (app.key == key) {
-      appContainer.innerHTML = `
-      <div class="col-7 animate__animated animate__fadeIn animate__slower col-left mt-4">
-        <div> 
-        <img src="${app.title}" class="img_title" alt="" />
+  for (let rowHome of rowsHome) {
+    rowHome.classList.add('d-none');
+  }
+  for (let rowApp of rowsApp) {
+    rowApp.classList.remove('d-none');
+  }
+
+  if (appInfo) {
+    appContainer.innerHTML = `
+      <div class="col-12 col-sm-7 order-2 order-sm-1 col-left mt-4">
+        <svg
+          class="cursor-pointer"
+          id="arrow"
+          width="60"
+          height="60"
+          viewBox="0 0 60 60"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          onclick="refresh()"
+        >
+          <path
+            d="M10.875 19.125L4.125 12.375L10.875 5.625M19.875 12.375L4.125 12.375"
+            stroke="#0C5EAA"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+
+        <div class="animate__animated animate__fadeIn animate__slow mb-4"> 
+          <img src="${appInfo.title}" class="img-fluid" alt="" />
         </div>
-        <div> 
-        <h5 class="description text-break text-wrap">
-         ${app.description}
-        </h5>
-        </div>
-        <div> 
-        <a class="btn_go" href="${app.url}" target="_blank">Iniciar</a>
-        </div>
+
+        <p class="text-black animate__animated animate__fadeIn animate__slow" style="font-size: 18px">
+          ${appInfo.description}
+        </p>
+        
+        <a class="btn btn-primary px-5 animate__animated animate__fadeIn animate__slow mt-4" href="${appInfo.url}" target="_blank">Iniciar <img class="img-fluid d-inline-block align-baseline" src="/img/arrow_btn.svg"></a>
       </div>
-      <div class="col-5 img_col animate__animated animate__fadeIn animate__slower" >
-        <img src=${app.cover} alt="" />
+      <div class="col-12 col-sm-5 order-1 order-sm-2 position-relative">
+        <img src=${appInfo.cover} alt="" class="img-fluid animate__animated animate__backInDown animate__fast" />
       </div>`;
-    }
-  });
+
+    document.body.classList.add('bg-light');
+  }
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+  showApps();
+});
