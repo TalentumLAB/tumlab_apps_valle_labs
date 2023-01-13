@@ -1,94 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Tumlab</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tumlab</title>
-    <link rel="stylesheet" href="./style/index.css" />
-    <!-- ------------------------------ Bootstrap ------------------------------ -->
-    <!-- CSS only -->
+
     <link href="./assets/css/bootstrap.css" rel="stylesheet" />
-    <!-- JavaScript Bundle with Popper -->
-    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./style/index.css" />
   </head>
   <body>
-    <script src="app.js"></script>
-    <header>
-      <img
-        class="logo"
-        src="./img/logo.png"
-        onclick="location.href='index.html'"
-        alt="Logo Tumlab"
-        srcset=""
-      />
+    <header class="fixed-top w-100 bg-white py-3">
+      <div class="container">
+        <img
+          src="./img/logo.png"
+          onclick="location.href='index.html'"
+          alt="Logo Tumlab"
+          srcset=""
+        />
+      </div>
     </header>
-    <img
-      class="vector_bg vector_left"
-      id="vector_left"
-      src="./img/vector_left.png"
-      alt=""
-    />
-    <img
-      class="vector_bg vector_right"
-      id="vector_right"
-      src="./img/vector_right.png"
-      alt=""
-      srcset=""
-    />
-    <img
-      class="rectangle_bg"
-      id="rectangle_bg"
-      src="./img/rectangle_bg.png"
-      alt=""
-    />
-    <svg
-      class="arrow"
-      id="arrow"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      onclick="location.href='index.html'"
-    >
-      <path
-        d="M10.875 19.125L4.125 12.375L10.875 5.625M19.875 12.375L4.125 12.375"
-        stroke="#0C5EAA"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-    </svg>
-    <section class="home_page text-center" id="home_section">
-      <div class="container" id="container_info">
-        <div class="row" id="row_info">
-          <script>
-            showAppDetails();
-          </script>
+
+    <main class="main-container">
+      <div class="bg-vectors row-info-home"></div>
+      <section class="content">
+        <div class="container">
+          <article id="row-info" class="row d-none row-info-apps"></article>
+          <article class="w-100 text-center row-info-home">
+            <img class="img-fluid home-img d-inline-block mb-4" src="./img/logo_2.png" alt="Tumlab" />
+            <p>
+              Entorno de aprendizaje para el despliegue de contenidos educativos
+              que fortalecen los procesos de enseñanza y aprendizaje. Ofrece la
+              facilidad en un entorno de aula virtual disponible sin conexión a
+              internet.
+            </p>
+          </article>
         </div>
-      </div>
-      <div class="container" id="container_home">
-        <img class="mb-4 logo_home" src="./img/logo_2.png" alt="Logo 2" />
-        <p>
-          Entorno de aprendizaje para el despliegue de contenidos educativos que
-          fortalecen los procesos de enseñanza y aprendizaje. Ofrece la
-          facilidad en un entorno de aula virtual disponible sin conexión a
-          internet.
-        </p>
-      </div>
-      <div class="container_app_down" id="container_app_down">
-        <h4 class="text-center title_explore mb-4" id="title_explore">
-          ¡Empieza a explorar!
-        </h4>
-        <div class="container container_cards" id="container_cards">
-          <div class="row row-cols-auto" id="row_cards">
-            <script>
-              showApps();
-            </script>
-          </div>
+        <div class="container mt-5">
+          <h2 class="text-center row-info-home mb-5 d-block">
+            ¡Empieza a explorar!
+          </h2>
+
+          <div class="row" id="row-cards"></div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
+
+    <script
+      src="./assets/js/bootstrap.bundle.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="app.js" type="text/javascript"></script>
   </body>
 </html>
