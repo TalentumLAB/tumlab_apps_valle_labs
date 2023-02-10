@@ -77,7 +77,7 @@ const addApps = [
     title: "./img/mediacms/title_mediacms.svg",
     cover: "./img/mediacms/cover_mediacms.svg",
     description:
-      "Description mediacms",
+      "Sistema de gestión de contenido desarrollado para ver y compartir medios audiovisuales pedagógicos enfocados en las áreas de Álgebra, Física, Geometría y Matemáticas.",
     url: "http://tumlab.local:8082",
   },
   {
