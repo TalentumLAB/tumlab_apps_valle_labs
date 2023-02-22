@@ -2,6 +2,7 @@
 const addApps = [
   {
     category_name: 'Plataformas LMS',
+    enable: true,
     children: [
       {
         order: 1,
@@ -27,6 +28,7 @@ const addApps = [
   },
   {
     category_name: 'Temas lúdicos',
+    enable: true,
     children: [
       {
         order: 1,
@@ -52,6 +54,7 @@ const addApps = [
   },
   {
     category_name: 'Simuladores',
+    enable: true,
     children: [
       {
         order: 1,
@@ -77,6 +80,7 @@ const addApps = [
   },
   {
     category_name: 'Inteligencia de negocios',
+    enable: true,
     children: [
       {
         order: 1,
@@ -92,6 +96,7 @@ const addApps = [
   },
   {
     category_name: 'Contenido informativo',
+    enable: true,
     children: [
       {
         order: 1,
@@ -132,9 +137,10 @@ const swipers = {};
 //Muestra las aplicaciones activas en la pagina de inicio.
 const showApps = () => {
   let htmlApps = '';
+  const filteredCategories = addApps.filter(c => c.enable);
 
   let catKey = 0;
-  for (const cat of addApps) {
+  for (const cat of filteredCategories) {
     htmlApps += `<div class="cat-container" id="cat-container-${catKey}">
       <h3 class="category-title">${cat.category_name}</h3>
         <div class="swiper mb-3" id="swiper-${catKey}">
