@@ -6,12 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
     <link href="./assets/css/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="./style/index.css" />
   </head>
   <body>
     <header class="fixed-top w-100 bg-white py-3">
-      <div class="container">
+      <div class="container text-center">
         <img
           src="./img/logo.png"
           onclick="location.href='index.html'"
@@ -27,7 +31,11 @@
         <div class="container">
           <article id="row-info" class="row d-none row-info-apps"></article>
           <article class="w-100 text-center row-info-home">
-            <img class="img-fluid home-img d-inline-block mb-4" src="./img/logo_2.png" alt="Tumlab" />
+            <img
+              class="img-fluid home-img d-inline-block mb-4"
+              src="./img/logo_2.png"
+              alt="Tumlab"
+            />
             <p>
               Entorno de aprendizaje para el despliegue de contenidos educativos
               que fortalecen los procesos de enseñanza y aprendizaje. Ofrece la
@@ -41,11 +49,12 @@
             ¡Empieza a explorar!
           </h2>
 
-          <div class="row" id="row-cards"></div>
+          <div class="container" id="row-cards"></div>
         </div>
       </section>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script
       src="./assets/js/bootstrap.bundle.min.js"
       type="text/javascript"

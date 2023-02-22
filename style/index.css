@@ -52,14 +52,46 @@ body.bg-light {
 }
 
 .content .card-img {
-  max-width: 80%;
+  height: 70px;
+  width: auto;
   transition: transform .3s ease-in-out;
+}
+
+@media screen and (max-width: 600px) {
+  .content .card-img {
+    height: 100px;
+  }
 }
 
 .cursor-pointer {
   cursor: pointer;
 }
 
+.card-app.selected > div {
+  border: 4px solid #0C5EAA;
+}
+
 .card-app:hover .card-img {
   transform: scale(1.1);
+}
+
+.swiper {
+  position: relative;
+}
+
+.swiper .swiper-button-next {
+  height: 100%;
+  top: 0;
+  right: 0;
+  background: linear-gradient(270deg, #195975 0%, rgba(27, 137, 195, 0) 91.67%);
+  margin-top: 0;
+}
+
+.swiper .swiper-button-next::after {
+  color: white;
+  font-size: 32px;
+}
+
+body.bg-light .category-title {
+  color: black;
 }
