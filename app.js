@@ -141,7 +141,8 @@ const showApps = () => {
         <div class="swiper-button-next"></div>
         <div class="swiper-wrapper">`;
 
-    const orderedApps = cat.children.sort((a, b) => a.order > b.order ? 1 : a.order < b.order ? -1 : 0);
+    const filteredApps = cat.children.filter((a) => a.is_show);
+    const orderedApps = filteredApps.sort((a, b) => a.order > b.order ? 1 : a.order < b.order ? -1 : 0);
 
     let appKey = 0;
     for (const app of orderedApps) {
