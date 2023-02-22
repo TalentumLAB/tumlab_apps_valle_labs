@@ -2,7 +2,7 @@
 const addApps = [
   {
     category_name: 'Plataformas LMS',
-    enable: true,
+    enable: false,
     children: [
       {
         order: 1,
@@ -226,7 +226,9 @@ const showAppDetails = (key) => {
   const [catKey, appKey] = key.split('-');
   const appContainer = document.getElementById("row-info");
 
-  const orderedApps = addApps[catKey].children.sort((a, b) => a.order > b.order ? 1 : a.order < b.order ? -1 : 0);
+  const filteredCategories = addApps.filter(c => c.enable);
+
+  const orderedApps = filteredCategories[catKey].children.sort((a, b) => a.order > b.order ? 1 : a.order < b.order ? -1 : 0);
   const appInfo = orderedApps[appKey];
 
   const categoryContainers = document.getElementsByClassName('cat-container');
