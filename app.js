@@ -1,3 +1,6 @@
+/// Habilitar o deshabilitar footer
+const ENABLED_FOOTER = true;
+
 //Arreglo de las aplicaciones
 const addApps = [
   {
@@ -161,7 +164,7 @@ const showApps = () => {
       `;
       appKey++;
     }
-    
+
     swipers[`${catKey}`] = null;
     htmlApps += '</div></div></div>';
     catKey++;
@@ -297,5 +300,14 @@ const showAppDetails = (key) => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  if (typeof ENABLED_FOOTER !== 'undefined') {
+    if (!ENABLED_FOOTER) {
+      const footers = document.getElementsByClassName('footer');
+
+      for (const footer of footers) {
+        footer.remove();
+      }
+    }
+  }
   showApps();
 });

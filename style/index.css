@@ -23,6 +23,10 @@ body.bg-light {
   background: white;
 }
 
+body:has(.footer) .main-container {
+  padding-bottom: 100px;
+}
+
 .main-container {
   min-height: 100vh;
   width: 100%;
@@ -94,4 +98,13 @@ body.bg-light {
 
 body.bg-light .category-title {
   color: black;
+}
+
+.footer {
+  z-index: 10;
+}
+
+.footer img {
+  max-width: 180px;
+  filter: brightness(100);
 }
