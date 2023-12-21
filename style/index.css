@@ -79,6 +79,8 @@ body:has(.footer) .main-container {
   padding-bottom: 100px;
 }
 
+/* Intro Start */
+
 .intro {
   position: fixed;
   width: 100dvw;
@@ -105,6 +107,8 @@ body:has(.footer) .main-container {
   animation: fade 1s;
   animation-fill-mode: forwards;
 }
+
+/* Intro end */
 
 button {
   all: unset;
