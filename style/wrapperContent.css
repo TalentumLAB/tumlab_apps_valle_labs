@@ -1,0 +1,103 @@
+.wrapper-container {
+  position: relative;
+  height: 100dvh;
+  width: 100dvw;
+  display: flex;
+  opacity: 1;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Open Sans";
+}
+
+.active {
+  animation: fadeIn 1s forwards;
+}
+
+.wrapper-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--overlayColor);
+  z-index: 1;
+}
+
+.info {
+  position: relative;
+  z-index: 2;
+  margin: 0 58px;
+}
+
+.info small {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.info h1 {
+  font-family: "Open Sans";
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+  color: #e3e3e3;
+  margin: 0 0 20px 0;
+}
+
+.info-content {
+  max-width: 626px;
+  overflow: hidden;
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.25px;
+  margin: 0 0 28px 0;
+}
+
+.info-content p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.info-content ol {
+  color: rgba(255, 255, 255, 0.6);
+  list-style: none;
+  counter-reset: item;
+  padding-left: 0;
+}
+
+.info-content ol li {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.info-content ol li::before {
+  content: counter(item) ".";
+  counter-increment: item;
+  color: #fff;
+}
+
+.info-content ol li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.info-content ol li strong {
+  color: #fff;
+}
+
+.section-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+img,
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}

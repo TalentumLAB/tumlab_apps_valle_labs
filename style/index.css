@@ -1,22 +1,74 @@
 @import "../assets/css/animate.css";
 @font-face {
-  font-family: "Montserrat";
-  src: url("../assets/fonts/Montserrat-Regular.ttf");
+  font-family: "Open Sans";
+  src: url("../assets/fonts/OpenSans-Regular.ttf");
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
-  font-family: "Montserrat";
-  src: url("../assets/fonts/Montserrat-Bold.ttf");
+  font-family: "Open Sans";
+  src: url("../assets/fonts/OpenSans-Bold.ttf");
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
+}
+
+:root {
+  --overlayColor: rgba(8, 21, 42, 0.5);
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes growCircle {
+  0% {
+    clip-path: circle(0%);
+    background-color: #fff;
+  }
+
+  100% {
+    background-color: #fff;
+    clip-path: circle(100%);
+  }
+}
+
+@keyframes changeColor {
+  0% {
+    fill: white;
+  }
+  100% {
+    fill: #061326;
+  }
+}
+
+@keyframes fade {
+  0% {
+    visibility: visible;
+  }
+
+  100% {
+    visibility: hidden;
+  }
 }
 
 body {
-  background: linear-gradient(90deg, #1b5a91 0%, #0b8acb 100%);
+  background: #061326;
   color: white;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  overflow: hidden;
 }
 
 body.bg-light {
@@ -27,7 +79,122 @@ body:has(.footer) .main-container {
   padding-bottom: 100px;
 }
 
-.main-container {
+/* Intro Start */
+
+.intro {
+  position: fixed;
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  clip-path: circle(100%);
+  animation: growCircle 750ms 1.6s linear forwards, fadeOut 2s 4s forwards;
+}
+
+.logo-svg {
+  animation: zoomIn 1s, fadeOut 2s 4s forwards;
+  transform-origin: 50% 50%;
+  z-index: 2;
+}
+
+.logo-svg path {
+  animation: changeColor 505ms linear forwards;
+  animation-delay: 1.5s;
+}
+
+.remove-intro {
+  animation: fade 1s;
+  animation-fill-mode: forwards;
+}
+
+/* Intro end */
+
+button {
+  all: unset;
+}
+
+/* Swiper start */
+
+.remove {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.swiper-container {
+  animation: fadeIn 500ms;
+}
+
+.swiper-button-container {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 20px;
+  transform: translateX(60px);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: relative;
+  width: 7.5rem;
+  max-height: 3rem;
+  color: #fff;
+}
+
+.swiper-button-prev {
+  background-color: transparent;
+  border-radius: 44px;
+  border: 1.5px solid #c4c7c5;
+  left: 60px;
+}
+
+.swiper-button-next {
+  background-color: rgba(68, 71, 70, 0.6);
+  border-radius: 44px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "";
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: #fff;
+  color: #000;
+  transform: scale(1.1);
+}
+
+.swiper-button-next:hover svg path,
+.swiper-button-prev:hover svg path {
+  fill: #000;
+}
+
+.swiper-pagination {
+  position: relative;
+  text-align: right;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 337px;
+  left: -58px;
+  width: 100%;
+}
+
+.swiper-pagination span {
+  background-color: #fff;
+}
+
+/* Swiper end */
+
+/* .main-container {
   min-height: 100vh;
   width: 100%;
   background-size: 100% auto;
@@ -40,8 +207,9 @@ body:has(.footer) .main-container {
   z-index: 1;
   width: 100%;
   height: 100%;
-  opacity: .2;
-  background: url('../img/vector_left.png') left center no-repeat, url('../img/vector_right.png') right top no-repeat;
+  opacity: 0.2;
+  background: url("../img/vector_left.png") left center no-repeat,
+    url("../img/vector_right.png") right top no-repeat;
   background-size: auto 100%, auto 50%;
 }
 
@@ -57,7 +225,7 @@ body:has(.footer) .main-container {
 .content .card-img {
   height: 70px;
   width: auto;
-  transition: transform .3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 @media screen and (max-width: 600px) {
@@ -71,7 +239,7 @@ body:has(.footer) .main-container {
 }
 
 .card-app.selected > div {
-  border: 4px solid #0C5EAA;
+  border: 4px solid #0c5eaa;
 }
 
 .card-app:hover .card-img {
@@ -106,4 +274,4 @@ body.bg-light .category-title {
 .footer img {
   max-width: 180px;
   filter: brightness(100);
-}
+} */
