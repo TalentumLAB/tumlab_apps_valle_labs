@@ -5,6 +5,7 @@ function destroySlider(id) {
   node.classList.add("remove");
   setTimeout(() => {
     node.remove();
+    document.body.style.overflow = "unset";
   }, 100);
 }
 
@@ -109,4 +110,6 @@ export const renderSlider = (arraySlides, node) => {
     observer: true,
     observeParents: true,
   });
+
+  document.body.style.overflow = "hidden";
 };
