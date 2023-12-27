@@ -231,5 +231,5 @@ document.addEventListener("DOMContentLoaded", () => {
     header.style.display = "flex";
     footer.style.display = "flex";
     renderContent(headerMenulist[0].name);
-  }, 6000);
+  }, 5600);
 });
