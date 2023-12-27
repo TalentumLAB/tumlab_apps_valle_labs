@@ -3,7 +3,7 @@ export const infoSlider = [
     smallTitile: "Bienvenido al",
     title: "Tumlab",
     content: `<p>¿Qué es el Tumlab? Es un dispositivo tecnológico multifuncional con la capacidad de brindar una red inalámbrica sin necesidad de internet. Esto permite soportar a múltiples usuarios de manera simultánea para el despliegue de aplicaciones y contenido multimedia. Además, es un equipo autónomo pues funciona con su propia batería externa disponible para alimentarlo cuando sea necesario</p>`,
-    image: "img/bg-poster.png",
+    image: "assets/img/bg-poster.png",
     buttons: ["omit", "next"],
   },
 
@@ -31,7 +31,7 @@ export const infoSlider = [
         </li>
     </ol>
       `,
-    image: "img/bg-poster-2.png",
+    image: "assets/img/bg-poster-2.png",
     buttons: ["play"],
   },
 ];
@@ -81,7 +81,7 @@ export const apps = [
         title: "Tumlab: Sistema de información",
         description:
           "En el Sistema de Información Tumlab la simplicidad se combina con la robustez para ofrecerte una experiencia educativa sin límites. Aquí encontrarás herramientas intuitivas, seguridad incomparable y continuas actualizaciones. Con Tumlab, tu viaje educativo está a punto de alcanzar nuevas alturas. ¡Explora, aprende y crece con confianza!",
-        url: "http://tumlab.local:5000",
+        url: "http://tumlab.local:3000",
       },
       {
         thumbnail: "./assets/recursos-talentum/lms_thumbnail.png",
@@ -130,7 +130,7 @@ export const apps = [
         title: "AGAU: El protector  del tiempo",
         description:
           "Aprende los fundamentos esenciales de gestión de residuos tecnológicos para salvaguardar y mejorar el medio ambiente y la salud de las personas.",
-        url: "http://tumlab.local:5000",
+        url: "http://tumlab.local:8083/",
       },
     ],
   },
@@ -143,7 +143,7 @@ export const apps = [
         title: "Simuladores: Español",
         description:
           "Realiza simulaciones interactivas de Física, Química y Ciencias basada en el proyecto PhET de la Universidad de Colorado, en Boulder. Estos recursos están respaldados por una investigación educativa extensiva e involucran a los estudiantes a través de un entorno intuitivo y lúdico, en el que aprenden explorando y descubriendo.",
-        url: "http://tumlab.local:5000",
+        url: "http://tumlab.local:8087/phet_es_2022-12/A/index.html",
       },
       {
         thumbnail: "./assets/simuladores/simulators-english_thumbnail.png",
@@ -151,7 +151,7 @@ export const apps = [
         title: "Simulators: English",
         description:
           "Interactive simulations in Physics, Chemistry, and Science based on the PhET interactive simulations project from the University of Colorado, in Boulder. These resources stem from extensive educational research and engage students through an intuitive, game-like environment, where they learn by exploring and discovering.",
-        url: "http://tumlab.local:5000",
+        url: "http://tumlab.local:8087/phet_en_2023-01/A/index.html",
       },
     ],
   },
@@ -165,7 +165,7 @@ export const apps = [
         title: "Apache Superset",
         description:
           "Superset es rápido, ligero intuitivo y ofrece una amplia gama de opciones que permiten a los usuarios de todos los niveles explorar y visualizar sus datos, Desde simples gráficos de líneas hasta gráficos geoespaciales altamente detallados., Superset te proporciona las herramientas que necesitas.",
-        url: "http://tumlab.local:5000",
+        url: "http://tumlab.local:8088",
       },
     ],
   },
@@ -180,7 +180,7 @@ export const apps = [
         title: "Wikipedia: Enciclopedia libre",
         description:
           "Wikipedia es una enciclopedia libre, políglota y editada de manera colaborativa., con más de 6.7 millones de artículos de consulta en inglés y otros idiomas. Es gestionada por la Fundación Wikimedia, una organización sin ánimo de lucro que se financia a través de donaciones.",
-        url: "https://es.wikipedia.org/",
+        url: "http://tumlab.local:8087/wikipedia_es_all_nopic_2022-10/A/Wikipedia:Offline",
       },
 
       {
@@ -189,7 +189,7 @@ export const apps = [
         title: "MediaCMS",
         description:
           "Un sistema de gestión de contenidos que permite ver y compartir medios, desarrollado para satisfacer las necesidades de las plataformas web modernas.",
-        url: "https://mediacms.io/",
+        url: "http://tumlab.local:8082",
       },
       {
         thumbnail: "./assets/recursos-educativos/open-street-map_thumbnail.png",
@@ -198,7 +198,7 @@ export const apps = [
         title: "OpenStreetMap",
         description:
           "OpenStreetMap es un proyecto colaborativo para crear mapas editables y libres. En lugar del mapa en sí, los datos generados por el proyecto se consideran su salida principal. Los mapas se crean utilizando información geográfica capturada con dispositivos GPS móviles, ortofotografías y otras fuentes libres.",
-        url: "https://www.openstreetmap.org/",
+        url: "http://tumlab.local:8081",
       },
       {
         thumbnail: "./assets/recursos-educativos/scratch_thumbnail.png",
@@ -207,7 +207,7 @@ export const apps = [
         title: "Scratch",
         description:
           "Descubre Scratch: la mayor comunidad de programación para niños y niñas, desarrollado por la Fundación Scratch.  Este lenguaje sencillo les permite crear historias digitales, juegos y animaciones, además de fomentar el pensamiento computacional, la creatividad, la resolución de problemas y la igualdad en informática. ¡Inspira a tus hijos a explorar el mundo digital de forma creativa y colaborativa con Scratch!",
-        url: "https://scratch.mit.edu/",
+        url: "http://192.168.4.1:8086",
       },
     ],
   },
