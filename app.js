@@ -286,17 +286,13 @@ const renderConfigMenu = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  // setTimeout(() => {
-  //   intro.remove();
-  //   renderSlider(infoSlider);
-  // }, 5500);
-  // setTimeout(() => {
-  //   header.style.display = "flex";
-  //   footer.style.display = "flex";
-  //   renderContent(headerMenulist[0].name);
-  // }, 5600);
+  setTimeout(() => {
+    intro.remove();
+    renderSlider(infoSlider);
+  }, 5500);
+  setTimeout(() => {
+    header.style.display = "flex";
+    footer.style.display = "flex";
+    renderContent(headerMenulist[0].name);
+  }, 5600);
 });
-
-header.style.display = "flex";
-footer.style.display = "flex";
-renderContent(headerMenulist[0].name);
