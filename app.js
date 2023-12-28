@@ -6,6 +6,8 @@ import {
 } from "./const.js";
 import { renderSlider } from "./components/slider.js";
 
+const SHOW_INTRO = true;
+
 const intro = document.querySelector(".intro");
 const header = document.querySelector(".header");
 const footer = document.querySelector(".footer");
@@ -130,8 +132,12 @@ function generateList(arrayList) {
   });
 }
 
-const headerList = generateList(headerMenulist);
-const mobileMenuList = generateList(headerMenulist);
+const visibleCategory = headerMenulist.filter(
+  (header) => header.is_enable !== false
+);
+
+const headerList = generateList(visibleCategory);
+const mobileMenuList = generateList(visibleCategory);
 const menuConfig = generateList(menuConfigurations);
 
 headerList.forEach((li, index) => {
@@ -162,15 +168,21 @@ const renderContent = (categoryName) => {
     ? apps[0]
     : apps.find((app) => app.category_name === categoryName);
 
+  if (app?.children) {
+    app.children.sort((a, b) => a.order - b.order);
+  }
+
   let imagesHTML = "";
   if (!app?.children) return;
 
   app.children.forEach((childApp, index) => {
-    imagesHTML += `<img src="${
-      childApp.thumbnail
-    }" alt="image" class="source-item ${
-      index === 0 ? "active" : ""
-    }" data-index="${index}">`;
+    if (childApp.is_show) {
+      imagesHTML += `<img src="${
+        childApp.thumbnail
+      }" alt="image" class="source-item ${
+        index === 0 ? "active" : ""
+      }" data-index="${index}">`;
+    }
   });
 
   let index = 0;
@@ -286,13 +298,20 @@ const renderConfigMenu = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  setTimeout(() => {
+  if (SHOW_INTRO) {
+    setTimeout(() => {
+      intro.remove();
+      renderSlider(infoSlider);
+    }, 5500);
+    setTimeout(() => {
+      header.style.display = "flex";
+      footer.style.display = "flex";
+      renderContent(headerMenulist[0].name);
+    }, 5600);
+  } else {
     intro.remove();
-    renderSlider(infoSlider);
-  }, 5500);
-  setTimeout(() => {
     header.style.display = "flex";
     footer.style.display = "flex";
     renderContent(headerMenulist[0].name);
-  }, 5600);
+  }
 });
