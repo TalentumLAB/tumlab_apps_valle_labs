@@ -128,6 +128,10 @@ hr {
   transition: opacity 0.3s;
 }
 
+.swiper {
+  z-index: 9999;
+}
+
 .swiper-container {
   animation: fadeIn 500ms;
 }
@@ -208,11 +212,14 @@ hr {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 3;
 }
 
 .header .logo {
   cursor: pointer;
   margin-left: 3.625rem;
+  position: relative;
 }
 
 .header .menu-list {
@@ -252,6 +259,7 @@ hr {
   margin-right: 58px;
   display: flex;
   gap: 1rem;
+  position: relative;
 }
 
 .header .menu-section-btns #menuToggle {
@@ -342,6 +350,7 @@ hr {
 .overlay.open {
   transform: translateX(0);
   opacity: 1;
+  z-index: 3;
 }
 
 #menuToggle input:checked ~ #menu-mobile {
@@ -405,37 +414,38 @@ hr {
   transition: transform 300ms ease-in-out;
 }
 
-.config-list {
+.config-list-tab-mobile {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.config-list li {
+.config-list-tab-mobile li {
   padding: 4px 8px;
   margin-top: 10px;
   margin-left: -8px;
 }
 
-.config-list li a {
+.config-list-tab-mobile li {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
-.config-list li a svg {
+.config-list-tab-mobile li svg {
   margin-right: 4px;
 }
 
-.config-list li.active {
+.config-list-tab-mobile li.active {
   background-color: #fff;
   border-radius: 8px;
 }
 
-.config-list li.active a {
+.config-list-tab-mobile li.active {
   color: #000;
 }
 
-.config-list li.active svg path {
+.config-list-tab-mobile li.active svg path {
   fill: #000;
 }
 
@@ -557,6 +567,7 @@ hr {
   justify-content: space-between;
   align-items: center;
   padding: 20px 58px;
+  z-index: 3;
 }
 
 .footer .footer-version {
@@ -570,6 +581,187 @@ hr {
 }
 
 /* Main end */
+
+/* Modal start*/
+
+.modal-config {
+  background-color: #061326;
+  color: #c7c6ca;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 3;
+}
+
+.modal-config .modal-center-content {
+  margin: 0 2.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wrapper-config {
+  display: flex;
+  gap: 2rem;
+}
+
+.config-list-tab-desktop {
+  max-width: 350px;
+  width: 100%;
+}
+
+.config-list-tab-desktop li {
+  color: inherit;
+  font-family: Open Sans;
+  font-size: 22px;
+  font-style: normal;
+  line-height: 20px;
+  padding: 14px 16px;
+  margin: 0.5rem 0;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.config-list-tab-desktop li:not(.active):hover {
+  background-color: #fcfcfc;
+  color: #000;
+}
+
+.config-list-tab-desktop li:hover svg path {
+  fill: #000;
+}
+
+.config-list-tab-desktop li svg {
+  width: 24px;
+  height: 24px;
+}
+
+.config-list-tab-desktop li.active {
+  background-color: #fcfcfc;
+  color: #000;
+}
+
+.config-list-tab-desktop li.active svg path {
+  fill: #000;
+}
+
+.config-list-content {
+  max-width: 903px;
+  height: 650px;
+  border-bottom: 1px solid #8e9099;
+  width: 100%;
+  position: relative;
+}
+
+.modal-center-content .modal-title {
+  /* position: absolute;
+  left: 70px;
+  top: 250px; */
+}
+
+.config-list-content h2 {
+  font-size: clamp(34px, 4vw, 38px);
+}
+
+.config-list-content h4 {
+  color: #c4c6cf;
+  opacity: 0.8;
+}
+
+.config-list-content p {
+  color: #fcfcfc;
+  opacity: 0.8;
+}
+
+.config-list-content h5 {
+  color: #fcfcfc;
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.25px;
+}
+
+.config-list-content .config-list-item {
+  display: none;
+}
+
+.config-list-content .config-list-item.active {
+  display: block;
+}
+
+.config-list-content .config-mini-list {
+  margin-bottom: 24px;
+  font-size: 18px;
+}
+
+.config-list-content .config-mini-list li::before {
+  content: "";
+  display: inline-flex;
+  justify-content: center;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 0 0.6rem;
+}
+
+.license-key {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.container-languages {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.license-key span {
+  color: #00c3ff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.25px;
+}
+
+.lang-item small {
+  color: #fff;
+  opacity: 0.6;
+}
+
+.lang-item label {
+  display: flex;
+  gap: 18px;
+  font-size: 26px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.lang-item input[type="radio"] {
+  display: none;
+}
+
+.lang-item label::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 20px;
+  border-right: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  transform: rotate(45deg);
+}
+
+.lang-item input[type="radio"]:checked + label::after {
+  border-color: #fff;
+}
+
+/* Modal end */
 
 /* Tablet */
 
@@ -621,6 +813,22 @@ hr {
 
   .swiper-button-container {
     transform: translateX(30px);
+  }
+
+  .config-list-tab-desktop {
+    display: none;
+  }
+
+  .modal-config .modal-center-content {
+    margin: 40px 6px;
+    justify-content: flex-start;
+  }
+
+  /* .wrapper-config {
+    height: 100%;
+  } */
+  .config-list-content {
+    height: 1194px;
   }
 
   /* Video end */

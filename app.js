@@ -11,12 +11,20 @@ const header = document.querySelector(".header");
 const footer = document.querySelector(".footer");
 const logo = document.querySelector(".logo");
 const mainContainer = document.querySelector(".main-container");
-const btnRestart = document.querySelectorAll(".btn-restart");
+
 const menuList = document.querySelector(".menu-list");
 const listMobile = document.querySelector(".list-mobile");
-const configList = document.querySelector(".config-list");
+
 const checkbox = document.querySelector("#menuToggle input[type='checkbox']");
 const overlay = document.querySelector(".overlay");
+const modalConfig = document.querySelector(".modal-config");
+
+const btnRestart = document.querySelectorAll(".btn-restart");
+const btnConfig = document.querySelectorAll(".btn-config");
+
+const configListTabDesktop = document.querySelector(".config-list-tab-desktop");
+const configListTabMobile = document.querySelector(".config-list-tab-mobile");
+const configListContent = document.querySelector(".config-list-content");
 
 /* Send to home */
 logo.addEventListener("click", () => {
@@ -36,7 +44,7 @@ document.addEventListener("click", function (event) {
 
 checkbox.addEventListener("change", function () {
   if (this.checked) {
-    toggleOverlay();
+    overlay.classList.add("open");
   } else {
     overlay.classList.remove("open");
   }
@@ -44,6 +52,10 @@ checkbox.addEventListener("change", function () {
 
 function toggleCheckbox() {
   checkbox.checked = !checkbox.checked;
+}
+
+function toggleModal() {
+  modalConfig.open = !modalConfig.open;
 }
 
 function toggleOverlay() {
@@ -71,28 +83,34 @@ function restartSlider() {
   }
 }
 
+/* Restart slider */
 btnRestart.forEach((btn) => {
   btn.addEventListener("click", () => restartSlider());
+});
+
+/* Configuration menu */
+btnConfig.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    toggleModal();
+    renderConfigMenu();
+  });
 });
 
 function generateList(arrayList) {
   return arrayList.map((item, index) => {
     const li = document.createElement("li");
     li.setAttribute("data-index", index);
-    const link = document.createElement("a");
 
     if (item.icon) {
       const parser = new DOMParser();
       const svgDoc = parser.parseFromString(item.icon, "image/svg+xml");
       const svgElement = svgDoc.documentElement;
 
-      link.appendChild(svgElement);
-      link.insertAdjacentText("beforeend", ` ${item.name}`);
+      li.appendChild(svgElement);
+      li.insertAdjacentText("beforeend", ` ${item.name}`);
     } else {
-      link.innerText = item.name;
+      li.innerText = item.name;
     }
-
-    li.append(link);
 
     li.addEventListener("click", function () {
       const items = document.querySelectorAll("li");
@@ -127,7 +145,16 @@ mobileMenuList.forEach((li, index) => {
 });
 
 menuConfig.forEach((li) => {
-  return configList.append(li);
+  return configListTabMobile.append(li);
+});
+
+const configListMobileItems = configListTabMobile.querySelectorAll("li");
+
+configListMobileItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    toggleModal();
+    renderConfigMenu();
+  });
 });
 
 const renderContent = (categoryName) => {
@@ -136,6 +163,8 @@ const renderContent = (categoryName) => {
     : apps.find((app) => app.category_name === categoryName);
 
   let imagesHTML = "";
+  if (!app?.children) return;
+
   app.children.forEach((childApp, index) => {
     imagesHTML += `<img src="${
       childApp.thumbnail
@@ -221,15 +250,53 @@ const renderContent = (categoryName) => {
   });
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  setTimeout(() => {
-    intro.remove();
-    renderSlider(infoSlider);
-  }, 5500);
+const renderConfigMenu = () => {
+  const menuConfigTab = generateList(menuConfigurations);
 
-  setTimeout(() => {
-    header.style.display = "flex";
-    footer.style.display = "flex";
-    renderContent(headerMenulist[0].name);
-  }, 5600);
+  let configListTab;
+
+  if (window.innerWidth <= 864) {
+    configListTab = configListTabMobile;
+  } else {
+    configListTab = configListTabDesktop;
+  }
+
+  configListTab.innerHTML = "";
+  configListContent.innerHTML = "";
+
+  menuConfigTab.forEach((li) => {
+    return configListTab.append(li);
+  });
+
+  const listTabs = configListTab.querySelectorAll("li");
+
+  listTabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => {
+      listTabs.forEach((tab) => tab.classList.remove("active"));
+      tab.classList.add("active");
+
+      configListContent.innerHTML = "";
+      configListContent.innerHTML = menuConfigurations[index].content;
+      configListContent.firstElementChild.classList.add("active");
+    });
+  });
+
+  /* Select first item */
+  listTabs[0].click();
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  // setTimeout(() => {
+  //   intro.remove();
+  //   renderSlider(infoSlider);
+  // }, 5500);
+  // setTimeout(() => {
+  //   header.style.display = "flex";
+  //   footer.style.display = "flex";
+  //   renderContent(headerMenulist[0].name);
+  // }, 5600);
 });
+
+header.style.display = "flex";
+footer.style.display = "flex";
+renderContent(headerMenulist[0].name);
