@@ -1,4 +1,5 @@
-.button {
+.button,
+.link-btn {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -11,13 +12,16 @@
   transition: transform 0.2s ease-out;
 }
 
-.button:hover {
+.button:hover,
+.link-btn:hover {
   background-color: #fff;
   color: #000;
   transform: scale(1.1);
 }
 
-.button:hover svg path {
+.button:hover svg path,
+.btn-icon:hover svg path,
+.link-btn:hover svg path {
   fill: #000;
 }
 
@@ -32,4 +36,17 @@
   padding: 10px 16px 10px 12px;
   border-radius: 44px;
   border: 1.5px solid #c4c7c5;
+}
+
+.btn-icon {
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.btn-icon:hover {
+  background-color: #fff;
+}
+
+.btn-play {
+  padding: 1rem 2rem;
 }
