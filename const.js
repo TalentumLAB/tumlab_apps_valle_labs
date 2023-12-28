@@ -164,11 +164,11 @@ export const menuConfigurations = [
 ];
 
 export const headerMenulist = [
-  { name: "Recursos Talentum" },
-  { name: "Herramientas digitales" },
-  { name: "Simuladores" },
-  { name: "Infraestructura de datos" },
-  { name: "Recursos educativos abiertos" },
+  { name: "Recursos Talentum", is_enable: true },
+  { name: "Herramientas digitales", is_enable: true },
+  { name: "Simuladores", is_enable: true },
+  { name: "Infraestructura de datos", is_enable: true },
+  { name: "Recursos educativos abiertos", is_enable: true },
 ];
 
 export const apps = [
@@ -176,6 +176,8 @@ export const apps = [
     category_name: "Recursos Talentum",
     children: [
       {
+        order: 1,
+        is_show: true,
         thumbnail: "./assets/recursos-talentum/tumlab_thumbnail.png",
         video: "./assets/recursos-talentum/videos/recursos-talentum-tumlab.mp4",
         title: "Tumlab: Sistema de información",
@@ -184,6 +186,8 @@ export const apps = [
         url: "http://tumlab.local:3000",
       },
       {
+        order: 2,
+        is_show: true,
         thumbnail: "./assets/recursos-talentum/lms_thumbnail.png",
         video: "./assets/recursos-talentum/videos/recursos-talentum-lms.mp4",
         title: "Tumlab: LMS",
@@ -192,6 +196,8 @@ export const apps = [
         url: "http://tumlab.local:5000",
       },
       {
+        order: 3,
+        is_show: true,
         thumbnail: "./assets/recursos-talentum/patia_thumbnail.png",
         video: "./assets/recursos-talentum/videos/recursos-talentum-patia.mp4",
         title: "Aulas STEAM: Patía",
@@ -200,6 +206,8 @@ export const apps = [
         url: "http://tumlab.local:5000",
       },
       {
+        order: 4,
+        is_show: true,
         thumbnail: "./assets/recursos-talentum/steam-valle_thumbnail.png",
         video:
           "./assets/recursos-talentum/videos/recursos-talentum-steam-valle.mp4",
@@ -215,6 +223,8 @@ export const apps = [
     category_name: "Herramientas digitales",
     children: [
       {
+        order: 1,
+        is_show: true,
         thumbnail: "./assets/herramientas-digitales/universum_thumbnail.png",
         video:
           "./assets/herramientas-digitales/videos/herramientas-digitales-universum.mp4",
@@ -224,6 +234,8 @@ export const apps = [
         url: "http://tumlab.local:5000",
       },
       {
+        order: 2,
+        is_show: true,
         thumbnail: "./assets/herramientas-digitales/agau_thumbnail.png",
         video:
           "./assets/herramientas-digitales/videos/herramientas-digitales-agau.mp4",
@@ -238,6 +250,8 @@ export const apps = [
     category_name: "Simuladores",
     children: [
       {
+        order: 1,
+        is_show: true,
         thumbnail: "./assets/simuladores/simulators-spanish_thumbnail.png",
         video: "./assets/simuladores/videos/simulators-spanish.mov",
         title: "Simuladores: Español",
@@ -246,6 +260,8 @@ export const apps = [
         url: "http://tumlab.local:8087/phet_es_2022-12/A/index.html",
       },
       {
+        order: 2,
+        is_show: true,
         thumbnail: "./assets/simuladores/simulators-english_thumbnail.png",
         video: "./assets/simuladores/videos/simulators-english.mov",
         title: "Simulators: English",
@@ -259,6 +275,8 @@ export const apps = [
     category_name: "Infraestructura de datos",
     children: [
       {
+        order: 1,
+        is_show: true,
         thumbnail: "./assets/infraestructura-datos/superset_thumbnail.png",
         video:
           "./assets/infraestructura-datos/videos/infraestructura-datos-apache-superset.mp4",
@@ -274,6 +292,8 @@ export const apps = [
     category_name: "Recursos educativos abiertos",
     children: [
       {
+        order: 1,
+        is_show: true,
         thumbnail: "./assets/recursos-educativos/wikipedia_thumbnail.png",
         video:
           "./assets/recursos-educativos/videos/recursos-educativos-wikipedia.mp4",
@@ -284,6 +304,8 @@ export const apps = [
       },
 
       {
+        order: 2,
+        is_show: true,
         thumbnail: "./assets/recursos-educativos/mediacms_thumbnail.png",
         bg: "./assets/recursos-educativos/mediacms_bg.png",
         title: "MediaCMS",
@@ -292,6 +314,8 @@ export const apps = [
         url: "http://tumlab.local:8082",
       },
       {
+        order: 3,
+        is_show: true,
         thumbnail: "./assets/recursos-educativos/open-street-map_thumbnail.png",
         video:
           "./assets/recursos-educativos/videos/recursos-educativos-open-street-map.mp4",
@@ -301,6 +325,8 @@ export const apps = [
         url: "http://tumlab.local:8081",
       },
       {
+        order: 4,
+        is_show: true,
         thumbnail: "./assets/recursos-educativos/scratch_thumbnail.png",
         video:
           "./assets/recursos-educativos/videos/recursos-educativos-scratch.mp4",
