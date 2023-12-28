@@ -36,14 +36,6 @@ export const infoSlider = [
   },
 ];
 
-export const headerMenulist = [
-  { name: "Recursos Talentum" },
-  { name: "Herramientas digitales" },
-  { name: "Simuladores" },
-  { name: "Infraestructura de datos" },
-  { name: "Recursos educativos abiertos" },
-];
-
 export const menuConfigurations = [
   {
     id: "specifications",
@@ -169,6 +161,14 @@ export const menuConfigurations = [
     </div>
   `,
   },
+];
+
+export const headerMenulist = [
+  { name: "Recursos Talentum" },
+  { name: "Herramientas digitales" },
+  { name: "Simuladores" },
+  { name: "Infraestructura de datos" },
+  { name: "Recursos educativos abiertos" },
 ];
 
 export const apps = [
