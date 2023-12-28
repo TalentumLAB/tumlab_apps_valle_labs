@@ -600,11 +600,13 @@ hr {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: auto;
 }
 
 .wrapper-config {
   display: flex;
   gap: 2rem;
+  height: 70%;
 }
 
 .config-list-tab-desktop {
@@ -649,16 +651,15 @@ hr {
 
 .config-list-content {
   max-width: 903px;
-  height: 650px;
   border-bottom: 1px solid #8e9099;
   width: 100%;
+  padding-bottom: 1rem;
   position: relative;
+  overflow: auto;
 }
 
 .modal-center-content .modal-title {
-  /* position: absolute;
-  left: 70px;
-  top: 250px; */
+  font-size: clamp(26px, 5vw, 42px);
 }
 
 .config-list-content h2 {
@@ -822,13 +823,6 @@ hr {
   .modal-config .modal-center-content {
     margin: 40px 6px;
     justify-content: flex-start;
-  }
-
-  /* .wrapper-config {
-    height: 100%;
-  } */
-  .config-list-content {
-    height: 1194px;
   }
 
   /* Video end */
