@@ -100,7 +100,7 @@ export const menuConfigurations = [
     <div class="license-key">
       <span
         >"sync_server_license":
-        "TLab-SyncServer1_0-CAJ-062023-HZERT18-01"</span
+        "TLab-Sync1_0-CES-012024-TEST-01"</span
       >
       <p>Activation date: <strong>Jan 18, 2023</strong></p>
     </div>
@@ -165,10 +165,10 @@ export const menuConfigurations = [
 ];
 
 export const headerMenulist = [
-  { name: "Talentum Resources", is_enable: true },
+  { name: "Talentum Resources", is_enable: false },
   { name: "Digital Tools", is_enable: true },
   { name: "Simulators", is_enable: true },
-  { name: "Data Infrastructure", is_enable: true },
+  { name: "Data Infrastructure", is_enable: false },
   { name: "Open Educational Resources", is_enable: true },
 ];
 
@@ -232,11 +232,11 @@ export const apps = [
         title: "Universum",
         description:
           "Universum is an interactive 3D system consisting of a virtual space where, through an avatar, it&#39;s possible to explore different digital environments. These environments complement the educational experience and enable self-management of knowledge. The use of emerging technologies and pedagogies is employed to benefit the educational community.",
-        url: "http://tumlab.local:5000",
+        url: "http://tumlab.local:3003",
       },
       {
         order: 2,
-        is_show: true,
+        is_show: false,
         thumbnail: "./assets/herramientas-digitales/agau_thumbnail.png",
         video:
           "./assets/herramientas-digitales/videos/herramientas-digitales-agau.mp4",
@@ -268,7 +268,7 @@ export const apps = [
         title: "Simulators",
         description:
           "Conduct interactive simulations in physics, chemistry, and sciences based on the PhET project from the University of Colorado, Boulder. These resources are supported by extensive educational research and engage students through an intuitive and playful environment, where they learn by exploring and discovering.",
-        url: "http://tumlab.local:8087/phet_en_2023-01/A/index.html",
+        url: "http://tumlab.local:8087/viewer#phet_en_all_2023-04/A/index.html",
       },
     ],
   },
@@ -301,7 +301,7 @@ export const apps = [
         title: "Wikipedia: Free encyclopedia",
         description:
           "Wikipedia is a free, multilingual, collaboratively edited encyclopedia with over 6.7 million reference articles in English and other languages. It is managed by the Wikimedia Foundation, a non-profit organization funded through donations.",
-        url: "http://tumlab.local:8087/wikipedia_es_all_nopic_2022-10/A/Wikipedia:Offline",
+        url: "http://tumlab.local:8087/viewer#wikipedia_es_all_maxi_2023-10/A/Wikipedia:Offline",
       },
 
       {
@@ -312,7 +312,7 @@ export const apps = [
         title: "Media CMS",
         description:
           "A content management system that allows viewing and sharing media. It is developed to meet the needs of the most modern web platforms.",
-        url: "http://tumlab.local:8082",
+        url: "http://tumlab.local:8085",
       },
       {
         order: 3,
@@ -327,7 +327,7 @@ export const apps = [
       },
       {
         order: 4,
-        is_show: true,
+        is_show: false,
         thumbnail: "./assets/recursos-educativos/scratch_thumbnail.png",
         video:
           "./assets/recursos-educativos/videos/recursos-educativos-scratch.mp4",
