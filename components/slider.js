@@ -6,10 +6,16 @@ function destroySlider(id) {
   setTimeout(() => {
     node.remove();
     document.body.style.overflow = "unset";
+    document.body.style.minHeight = "100dvh";
+    document.body.style.display = "flex";
+    document.body.style.flexDirection = "column";
   }, 100);
 }
 
 export const renderSlider = (arraySlides, node) => {
+  document.body.style.minHeight = "auto";
+  document.body.style.display = "unset";
+  document.body.style.flexDirection = "unset";
   const targetNode = node || swiperContainer;
 
   let slides = arraySlides.map((item) => {
