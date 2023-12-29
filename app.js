@@ -142,11 +142,19 @@ const menuConfig = generateList(menuConfigurations);
 
 headerList.forEach((li, index) => {
   if (index === 0) li.classList.add("active");
+
+  li.addEventListener("click", () => {
+    modalConfig.open = false;
+  });
+
   return menuList.append(li);
 });
 
 mobileMenuList.forEach((li, index) => {
   if (index === 0) li.classList.add("active");
+  li.addEventListener("click", () => {
+    modalConfig.open = false;
+  });
   return listMobile.append(li);
 });
 
