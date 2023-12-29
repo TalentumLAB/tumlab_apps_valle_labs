@@ -28,9 +28,20 @@ const configListTabDesktop = document.querySelector(".config-list-tab-desktop");
 const configListTabMobile = document.querySelector(".config-list-tab-mobile");
 const configListContent = document.querySelector(".config-list-content");
 
+const visibleCategory = headerMenulist.filter(
+  (header) => header.is_enable !== false
+);
+
 /* Send to home */
 logo.addEventListener("click", () => {
-  renderContent(headerMenulist[0].name);
+  renderContent(visibleCategory[0].name);
+
+  const firstItem = menuList.querySelector("li:first-child");
+
+  const items = menuList.querySelectorAll("li");
+  items.forEach((item) => item.classList.remove("active"));
+
+  firstItem.classList.add("active");
 });
 
 /* Close menu mobile  */
@@ -131,10 +142,6 @@ function generateList(arrayList) {
     return li;
   });
 }
-
-const visibleCategory = headerMenulist.filter(
-  (header) => header.is_enable !== false
-);
 
 const headerList = generateList(visibleCategory);
 const mobileMenuList = generateList(visibleCategory);
@@ -314,12 +321,12 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       header.style.display = "flex";
       footer.style.display = "flex";
-      renderContent(headerMenulist[0].name);
+      renderContent(visibleCategory[0].name);
     }, 5600);
   } else {
     intro.remove();
     header.style.display = "flex";
     footer.style.display = "flex";
-    renderContent(headerMenulist[0].name);
+    renderContent(visibleCategory[0].name);
   }
 });
