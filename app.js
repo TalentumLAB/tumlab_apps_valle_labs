@@ -6,7 +6,7 @@ import {
 } from "./const.js";
 import { renderSlider } from "./components/slider.js";
 
-const SHOW_INTRO = false;
+const SHOW_INTRO = true;
 
 const intro = document.querySelector(".intro");
 const header = document.querySelector(".header");
