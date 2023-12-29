@@ -68,6 +68,9 @@ body {
   background: #061326;
   color: white;
   font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
 }
 
 button {
@@ -561,13 +564,13 @@ hr {
 .footer {
   width: 100%;
   background-color: inherit;
-  position: fixed;
-  bottom: 0;
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 58px;
   z-index: 3;
+  margin-top: auto;
 }
 
 .footer .footer-version {
@@ -829,10 +832,6 @@ hr {
 
   .category {
     display: block;
-  }
-
-  .footer {
-    position: unset;
   }
 }
 
