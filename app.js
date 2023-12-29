@@ -6,7 +6,7 @@ import {
 } from "./const.js";
 import { renderSlider } from "./components/slider.js";
 
-const SHOW_INTRO = true;
+const SHOW_INTRO = false;
 
 const intro = document.querySelector(".intro");
 const header = document.querySelector(".header");
@@ -219,7 +219,7 @@ const renderContent = (categoryName) => {
           />
         </g>
       </svg>
-      Iniciar
+      Start
     </a>
   </div>
   <h3 class="category">${categoryName}</h3>

@@ -27,7 +27,7 @@ export const renderSlider = (arraySlides, node) => {
             />
           </g>
         </svg>
-        Omitir
+        Omit
       </button>
        `;
     }
@@ -43,7 +43,7 @@ export const renderSlider = (arraySlides, node) => {
             />
           </g>
         </svg>
-        Siguiente
+        Next
       </button>
        `;
     }
@@ -56,7 +56,7 @@ export const renderSlider = (arraySlides, node) => {
         <path fill-rule="evenodd" clip-rule="evenodd" d="M2 9C2 4.86 5.36 1.5 9.5 1.5C13.64 1.5 17 4.86 17 9C17 13.14 13.64 16.5 9.5 16.5C5.36 16.5 2 13.14 2 9ZM12.5 9L8 5.625V12.375L12.5 9Z" fill="white"/>
         </g>
         </svg>
-        Iniciar
+        Start
       </button>
        `;
     }
