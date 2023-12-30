@@ -301,7 +301,7 @@ export const apps = [
         title: "Wikipedia: Free encyclopedia",
         description:
           "Wikipedia is a free, multilingual, collaboratively edited encyclopedia with over 6.7 million reference articles in English and other languages. It is managed by the Wikimedia Foundation, a non-profit organization funded through donations.",
-        url: "http://tumlab.local:8087/viewer#wikipedia_es_all_maxi_2023-10/A/Wikipedia:Offline",
+        url: "http://tumlab.local:8087/viewer#wikipedia_en_all_maxi_2023-11/A/User:The_other_Kiwix_guy/Landing",
       },
 
       {
