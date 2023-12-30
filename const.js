@@ -99,7 +99,7 @@ export const menuConfigurations = [
 
     <div class="license-key">
       <span
-        >"sync_server_license":
+        >"Lab_server_license":
         "TLab-Sync1_0-CES-012024-TALENTUM-01"</span
       >
       <p>Activation date: <strong>Jan 18, 2023</strong></p>
