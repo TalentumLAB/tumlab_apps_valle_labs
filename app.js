@@ -372,6 +372,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     header.style.display = "flex";
     footer.style.display = "flex";
     renderContent(visibleCategory[0].name);
-    /* renderConfigMenu(); */
+    renderConfigMenu();
   }
 });
