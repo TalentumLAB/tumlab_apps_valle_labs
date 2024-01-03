@@ -6,7 +6,9 @@ import {
 } from "./const.js";
 import { renderSlider } from "./components/slider.js";
 
-const SHOW_INTRO = true;
+const SHOW_INTRO = false;
+
+/* const selectedLanguage = localStorage.getItem("language"); */
 
 const intro = document.querySelector(".intro");
 const header = document.querySelector(".header");
@@ -27,6 +29,40 @@ const btnConfig = document.querySelectorAll(".btn-config");
 const configListTabDesktop = document.querySelector(".config-list-tab-desktop");
 const configListTabMobile = document.querySelector(".config-list-tab-mobile");
 const configListContent = document.querySelector(".config-list-content");
+
+let textsToChange = "";
+
+const getRadioButtons = () => {
+  return document.querySelectorAll("input[name='lang']");
+};
+
+document.addEventListener("click", function () {
+  const radioButtonLanguages = getRadioButtons();
+  textsToChange = document.querySelectorAll("[data-section]");
+
+  radioButtonLanguages.forEach((radio) => {
+    radio.addEventListener("change", async () => {
+      await changeLanguage(radio.value);
+      localStorage.setItem("language", radio.value);
+    });
+  });
+});
+
+async function changeLanguage(language) {
+  const fetchLanguage = await fetch(`./locales/${language}.json`);
+  const texts = await fetchLanguage.json();
+
+  for (const textChange of textsToChange) {
+    const section = textChange.dataset.section;
+    const value = textChange.dataset.value;
+
+    textChange.innerHTML = texts[section][value];
+  }
+}
+
+const visibleCategory = headerMenulist.filter(
+  (header) => header.is_enable !== false
+);
 
 /* Send to home */
 logo.addEventListener("click", () => {
@@ -94,22 +130,43 @@ btnRestart.forEach((btn) => {
 btnConfig.forEach((btn) => {
   btn.addEventListener("click", () => {
     toggleModal();
-    renderConfigMenu();
+    /* renderConfigMenu(); */
   });
 });
 
-function generateList(arrayList) {
-  return arrayList.map((item, index) => {
+function generateList({ arrayList, section = "", value = "" }) {
+  return arrayList.map((item) => {
     const li = document.createElement("li");
-    li.setAttribute("data-index", index);
+
+    if (section !== "" && !item.icon) {
+      li.setAttribute("data-section", section);
+    }
+
+    if (value !== "" && !item.icon) {
+      li.setAttribute(
+        "data-value",
+        `${section}-${value}-${item.id ?? item.name}`
+      );
+    }
 
     if (item.icon) {
       const parser = new DOMParser();
       const svgDoc = parser.parseFromString(item.icon, "image/svg+xml");
       const svgElement = svgDoc.documentElement;
 
-      li.appendChild(svgElement);
-      li.insertAdjacentText("beforeend", ` ${item.name}`);
+      const span = document.createElement("span");
+
+      if (section) span.dataset.section = section;
+
+      if (value)
+        span.dataset.value = `${section}-${value}-${item.id ?? item.name}`;
+
+      span.insertAdjacentHTML("afterbegin", item.name);
+
+      li.style.display = "flex";
+      li.style.gap = "2px";
+      li.prepend(svgElement);
+      li.appendChild(span);
     } else {
       li.innerText = item.name;
     }
@@ -132,13 +189,9 @@ function generateList(arrayList) {
   });
 }
 
-const visibleCategory = headerMenulist.filter(
-  (header) => header.is_enable !== false
-);
-
-const headerList = generateList(visibleCategory);
-const mobileMenuList = generateList(visibleCategory);
-const menuConfig = generateList(menuConfigurations);
+const headerList = generateList({ arrayList: visibleCategory });
+const mobileMenuList = generateList({ arrayList: visibleCategory });
+const menuConfig = generateList({ arrayList: menuConfigurations });
 
 headerList.forEach((li, index) => {
   if (index === 0) li.classList.add("active");
@@ -263,7 +316,11 @@ const renderContent = (categoryName) => {
 };
 
 const renderConfigMenu = () => {
-  const menuConfigTab = generateList(menuConfigurations);
+  const menuConfigTab = generateList({
+    arrayList: menuConfigurations,
+    section: "configurations",
+    value: "list",
+  });
 
   let configListTab;
 
@@ -272,9 +329,6 @@ const renderConfigMenu = () => {
   } else {
     configListTab = configListTabDesktop;
   }
-
-  configListTab.innerHTML = "";
-  configListContent.innerHTML = "";
 
   menuConfigTab.forEach((li) => {
     return configListTab.append(li);
@@ -287,7 +341,6 @@ const renderConfigMenu = () => {
       listTabs.forEach((tab) => tab.classList.remove("active"));
       tab.classList.add("active");
 
-      configListContent.innerHTML = "";
       configListContent.innerHTML = menuConfigurations[index].content;
       configListContent.firstElementChild.classList.add("active");
     });
@@ -297,7 +350,12 @@ const renderConfigMenu = () => {
   listTabs[0].click();
 };
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+  const selectedLanguage = localStorage.getItem("language");
+  if (selectedLanguage) {
+    await changeLanguage(selectedLanguage);
+  }
+
   if (SHOW_INTRO) {
     setTimeout(() => {
       intro.remove();
@@ -306,12 +364,14 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       header.style.display = "flex";
       footer.style.display = "flex";
-      renderContent(headerMenulist[0].name);
+      renderContent(visibleCategory[0].name);
+      renderConfigMenu();
     }, 5600);
   } else {
     intro.remove();
     header.style.display = "flex";
     footer.style.display = "flex";
-    renderContent(headerMenulist[0].name);
+    renderContent(visibleCategory[0].name);
+    /* renderConfigMenu(); */
   }
 });

@@ -45,7 +45,7 @@ export const menuConfigurations = [
   </svg>`,
     content: `
   <div class="config-list-item">
-  <h2>Especificaciones del dispositivo</h2>
+  <h2 data-section="configurations" data-value="configurations-specifications-title">Device Specifications</h2>
 
   <h5>Sistema operativo</h5>
   <ul class="config-mini-list">
@@ -108,37 +108,32 @@ export const menuConfigurations = [
   },
   {
     id: "language",
-    name: "Preferencias de idioma",
+    name: "Language preferences",
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
     <path fill-rule="evenodd" clip-rule="evenodd" d="M8.58002 10.0467L6.88669 8.37333L6.90669 8.35333C8.06669 7.06 8.89335 5.57333 9.38002 4H11.3334V2.66667H6.66669V1.33333H5.33335V2.66667H0.666687V3.99333H8.11335C7.66669 5.28 6.96002 6.5 6.00002 7.56667C5.38002 6.88 4.86669 6.12667 4.46002 5.33333H3.12669C3.61335 6.42 4.28002 7.44667 5.11335 8.37333L1.72002 11.72L2.66669 12.6667L6.00002 9.33333L8.07335 11.4067L8.58002 10.0467ZM12.3334 6.66667H11L8.00002 14.6667H9.33335L10.08 12.6667H13.2467L14 14.6667H15.3334L12.3334 6.66667ZM11.6667 8.44667L10.5867 11.3333H12.7467L11.6667 8.44667Z" fill="#6B7280"/>
   </svg>`,
     content: `<div class="config-list-item">
-  <h2>Prerencias de idioma</h2>
-  <p>
-    Nota: Tienes la opción de ajustar el idioma de tu dispositivo
-    según tus preferencias. Actualmente, solo ofrecemos los
-    siguientes paquetes de idiomas para tu selección. Estamos
-    trabajando constantemente para agregar más opciones en el
-    futuro.
-  </p>
+  <h2 data-section="configurations" data-value="configurations-language-title">Language preferences</h2>
+  <p data-section="configurations" data-value="configurations-language-description">
+  Note: You have the option to adjust the language of your device according to your preferences. Currently, we only offer the following language packages for your selection. We are continually working to add more options in the future.</p>
 
   <div class="container-languages">
     <div class="lang-item">
-      <small>Paquete de idioma</small>
+      <small data-section="configurations" data-value="configurations-language-package">Language package:</small>
       <input
         type="radio"
         name="lang"
         value="en"
-        id="english"
+        id="en"
         checked
       />
-      <label for="english"> English (US) </label>
+      <label for="en"> English (US) </label>
     </div>
 
     <div class="lang-item">
-      <small>Paquete de idioma</small>
-      <input type="radio" name="lang" value="es" id="spanish" />
-      <label for="spanish"> Español (COL) </label>
+    <small>Language package:</small>
+      <input type="radio" name="lang" value="es" id="es" />
+      <label for="es"> Español (COL) </label>
     </div>
   </div>
 </div>`,
