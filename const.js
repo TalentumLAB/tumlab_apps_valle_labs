@@ -48,7 +48,7 @@ export const menuConfigurations = [
   </svg>`,
     content: `
   <div class="config-list-item">
-  <h2>Device Specifications</h2>
+  <h2 data-section="configurations" data-value="configurations-specifications-title">Device Specifications</h2>
 
   <h5>Operating system</h5>
   <ul class="config-mini-list">
