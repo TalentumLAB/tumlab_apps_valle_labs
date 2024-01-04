@@ -31,6 +31,9 @@ const configListTabMobile = document.querySelector(".config-list-tab-mobile");
 const configListContent = document.querySelector(".config-list-content");
 
 const modalTitle = document.querySelector(".modal-title");
+const btnConfigurationMobile = document.querySelector(
+  ".btn-configurations-mobile .btn-icon-mobile [data-section='configurations'][data-value='title']"
+);
 
 const selectedLanguage = localStorage.getItem(LANGUAGE);
 
@@ -39,6 +42,7 @@ let textsToChange = "";
 const { slider, modal } = textChangeLanguage();
 
 modalTitle.innerHTML = modal.title;
+btnConfigurationMobile.innerHTML = modal.title;
 
 const getRadioButtons = () => {
   return document.querySelectorAll("input[name='lang']");
@@ -52,6 +56,7 @@ document.addEventListener("click", function () {
     radio.addEventListener("change", () => {
       changeLanguage(radio.value);
       localStorage.setItem("language", radio.value);
+      /* location.reload(); */
     });
   });
 });
@@ -170,6 +175,7 @@ function generateList({ arrayList, section = "", value = "" }) {
       const svgElement = svgDoc.documentElement;
 
       const span = document.createElement("span");
+      span.classList.add("list-item");
 
       if (section) span.dataset.section = section;
 
@@ -214,7 +220,11 @@ const mobileMenuList = generateList({
   section: "header",
   value: "category",
 });
-const menuConfig = generateList({ arrayList: menuConfigurations });
+const menuConfig = generateList({
+  arrayList: menuConfigurations,
+  section: "configurations",
+  value: "list",
+});
 
 headerList.forEach((li, index) => {
   if (index === 0) li.classList.add("active");
@@ -234,7 +244,8 @@ mobileMenuList.forEach((li, index) => {
   return listMobile.append(li);
 });
 
-menuConfig.forEach((li) => {
+menuConfig.forEach((li, index) => {
+  if (index === 0) li.classList.add("active");
   return configListTabMobile.append(li);
 });
 
@@ -243,10 +254,8 @@ const configListMobileItems = configListTabMobile.querySelectorAll("li");
 configListMobileItems.forEach((item) => {
   item.addEventListener("click", () => {
     toggleModal();
-    renderConfigMenu();
   });
 });
-
 const renderContent = (categoryName) => {
   const app = !categoryName
     ? apps[0]
@@ -272,51 +281,51 @@ const renderContent = (categoryName) => {
   let index = 0;
 
   const html = `
-  <div class="container-video">
-  <img src=${
-    app.children[index].bg
-  } class="bg-image" alt="Image description" style="display:none;">
-  <video
-    class="main-video"
-    src=${app.children[index].video}
-    autoplay
-    loop
-    muted
-    style=${app.children[index].video ? "" : "display:none;"}
-  ></video>
-</div>
-<section class="main-content">
-  <div class="source">
-    <h2 data-section="sectionApps" data-value=${`app-${app.children[index].id}-title`} class="source-title">${
+    <div class="container-video">
+    <img src=${
+      app.children[index].bg
+    } class="bg-image" alt="Image description" style="display:none;">
+    <video
+      class="main-video"
+      src=${app.children[index].video}
+      autoplay
+      loop
+      muted
+      style=${app.children[index].video ? "" : "display:none;"}
+    ></video>
+  </div>
+  <section class="main-content">
+    <div class="source">
+      <h2 data-section="sectionApps" data-value=${`app-${app.children[index].id}-title`} class="source-title">${
     app.children[index].title
   }</h2>
-    <p data-section="sectionApps" data-value=${`app-${app.children[index].id}-description`} class="source-description">
-    ${app.children[index].description}
-    </p>
-    <a href=${
-      app.children[index].url
-    } target="_blank" rel="noopener noreferrer" title="play" class="link-btn primary-button btn-play">
-      <svg width="19" height="19" viewBox="0 0 19 19" fill="none">
-        <g opacity="0.8">
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M15.5 9.5L5 16.25V2.75L15.5 9.5ZM11.945 9.5L6.9125 6.26V12.74L11.945 9.5Z"
-            fill="white"
-          />
-        </g>
-      </svg>
-
-      <span data-section="slider" data-value="slider-btn-play">${
-        slider["slider-btn-play"]
-      }</span>
-    </a>
-  </div>
-  <h3 class="category">${categoryName}</h3>
-  <div class="sources-apps">
-  ${imagesHTML}
-  </div>
-</section>`;
+      <p data-section="sectionApps" data-value=${`app-${app.children[index].id}-description`} class="source-description">
+      ${app.children[index].description}
+      </p>
+      <a href=${
+        app.children[index].url
+      } target="_blank" rel="noopener noreferrer" title="play" class="link-btn primary-button btn-play">
+        <svg width="19" height="19" viewBox="0 0 19 19" fill="none">
+          <g opacity="0.8">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M15.5 9.5L5 16.25V2.75L15.5 9.5ZM11.945 9.5L6.9125 6.26V12.74L11.945 9.5Z"
+              fill="white"
+            />
+          </g>
+        </svg>
+  
+        <span data-section="slider" data-value="slider-btn-play">${
+          slider["slider-btn-play"]
+        }</span>
+      </a>
+    </div>
+    <h3 class="category">${categoryName}</h3>
+    <div class="sources-apps">
+    ${imagesHTML}
+    </div>
+  </section>`;
 
   mainContainer.innerHTML = html;
 
@@ -367,7 +376,12 @@ const renderConfigMenu = () => {
     configListTab = configListTabDesktop;
   }
 
-  menuConfigTab.forEach((li) => {
+  if (window.innerWidth <= 864) {
+    configListTab.innerHTML = "";
+  }
+
+  menuConfigTab.forEach((li, index) => {
+    if (index === 0) li.classList.add("active");
     return configListTab.append(li);
   });
 
@@ -381,6 +395,8 @@ const renderConfigMenu = () => {
     tab.addEventListener("click", () => {
       listTabs.forEach((tab) => tab.classList.remove("active"));
       tab.classList.add("active");
+
+      modalConfig.open = true;
 
       configListContent
         .querySelectorAll(".config-list-item")
@@ -397,9 +413,6 @@ const renderConfigMenu = () => {
       }
     });
   });
-
-  /* Select first item */
-  listTabs[0].click();
 };
 
 document.addEventListener("DOMContentLoaded", () => {

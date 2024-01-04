@@ -286,7 +286,7 @@ hr {
   -webkit-touch-callout: none;
 }
 
-#menuToggle span {
+#menuToggle .line {
   display: block;
   width: 24px;
   height: 2px;
@@ -301,24 +301,24 @@ hr {
   transform-origin: 4px 0px;
 }
 
-#menuToggle span:nth-last-child(4) {
+#menuToggle .line:nth-last-child(4) {
   transform-origin: 0% 0%;
 }
 
-#menuToggle span:nth-last-child(2) {
+#menuToggle .line:nth-last-child(2) {
   transform-origin: 0% 100%;
 }
 
-#menuToggle input:checked ~ span {
+#menuToggle input:checked ~ .line {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1.1px);
   background: #fff;
 }
-#menuToggle input:checked ~ span:nth-last-child(2) {
+#menuToggle input:checked ~ .line:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
-#menuToggle input:checked ~ span:nth-last-child(3) {
+#menuToggle input:checked ~ .line:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }

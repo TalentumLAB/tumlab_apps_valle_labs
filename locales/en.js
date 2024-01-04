@@ -91,7 +91,7 @@ export const en = {
 
     "app-universum-title": "Universum",
     "app-universum-description":
-      "Universum es un sistema interactivo en 3D, se compone de un espacio virtual en el cual por medio de un avatar es posible recorrer diferentes entornos digitales, los cuales complementan la experiencia educativa y permiten la autogestión del conocimiento. Para esto se hace uso de las tecnologías y pedagogías emergentes con el fin de beneficiar a la comunidad educativa.",
+      "Universum is an interactive 3D system consisting of a virtual space where, through an avatar, it's possible to explore different digital environments. These environments complement the educational experience and enable self-management of knowledge. The use of emerging technologies and pedagogies is employed to benefit the educational community.",
 
     "app-agau-title": "AGAU: The Time Guardian",
     "app-agau-description":
