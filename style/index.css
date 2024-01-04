@@ -686,7 +686,7 @@ hr {
   letter-spacing: 0.25px;
 }
 
-.config-list-content .config-list-item {
+.config-list-content .config-list-item.hide {
   display: none;
 }
 
@@ -722,7 +722,7 @@ hr {
   gap: 6px;
 }
 
-.license-key span {
+.license-key .activation {
   color: #00c3ff;
   font-size: 18px;
   font-style: normal;

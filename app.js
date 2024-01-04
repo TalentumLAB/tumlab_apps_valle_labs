@@ -3,12 +3,12 @@ import {
   headerMenulist,
   menuConfigurations,
   apps,
+  LANGUAGE,
 } from "./const.js";
 import { renderSlider } from "./components/slider.js";
+import { textChangeLanguage } from "./locales/index.js";
 
 const SHOW_INTRO = false;
-
-/* const selectedLanguage = localStorage.getItem("language"); */
 
 const intro = document.querySelector(".intro");
 const header = document.querySelector(".header");
@@ -30,7 +30,15 @@ const configListTabDesktop = document.querySelector(".config-list-tab-desktop");
 const configListTabMobile = document.querySelector(".config-list-tab-mobile");
 const configListContent = document.querySelector(".config-list-content");
 
+const modalTitle = document.querySelector(".modal-title");
+
+const selectedLanguage = localStorage.getItem(LANGUAGE);
+
 let textsToChange = "";
+
+const { slider, modal } = textChangeLanguage();
+
+modalTitle.innerHTML = modal.title;
 
 const getRadioButtons = () => {
   return document.querySelectorAll("input[name='lang']");
@@ -41,16 +49,15 @@ document.addEventListener("click", function () {
   textsToChange = document.querySelectorAll("[data-section]");
 
   radioButtonLanguages.forEach((radio) => {
-    radio.addEventListener("change", async () => {
-      await changeLanguage(radio.value);
+    radio.addEventListener("change", () => {
+      changeLanguage(radio.value);
       localStorage.setItem("language", radio.value);
     });
   });
 });
 
-async function changeLanguage(language) {
-  const fetchLanguage = await fetch(`./locales/${language}.json`);
-  const texts = await fetchLanguage.json();
+function changeLanguage(language) {
+  const texts = textChangeLanguage(language);
 
   for (const textChange of textsToChange) {
     const section = textChange.dataset.section;
@@ -66,7 +73,15 @@ const visibleCategory = headerMenulist.filter(
 
 /* Send to home */
 logo.addEventListener("click", () => {
-  renderContent(headerMenulist[0].name);
+  modalConfig.open = false;
+  renderContent(visibleCategory[0].name);
+
+  const firstItem = menuList.querySelector("li:first-child");
+
+  const items = menuList.querySelectorAll("li");
+  items.forEach((item) => item.classList.remove("active"));
+
+  firstItem.classList.add("active");
 });
 
 /* Close menu mobile  */
@@ -130,7 +145,6 @@ btnRestart.forEach((btn) => {
 btnConfig.forEach((btn) => {
   btn.addEventListener("click", () => {
     toggleModal();
-    /* renderConfigMenu(); */
   });
 });
 
@@ -189,17 +203,33 @@ function generateList({ arrayList, section = "", value = "" }) {
   });
 }
 
-const headerList = generateList({ arrayList: visibleCategory });
-const mobileMenuList = generateList({ arrayList: visibleCategory });
+const headerList = generateList({
+  arrayList: visibleCategory,
+  section: "header",
+  value: "category",
+});
+const mobileMenuList = generateList({
+  arrayList: visibleCategory,
+  section: "header",
+  value: "category",
+});
 const menuConfig = generateList({ arrayList: menuConfigurations });
 
 headerList.forEach((li, index) => {
   if (index === 0) li.classList.add("active");
+
+  li.addEventListener("click", () => {
+    modalConfig.open = false;
+  });
+
   return menuList.append(li);
 });
 
 mobileMenuList.forEach((li, index) => {
   if (index === 0) li.classList.add("active");
+  li.addEventListener("click", () => {
+    modalConfig.open = false;
+  });
   return listMobile.append(li);
 });
 
@@ -239,6 +269,7 @@ const renderContent = (categoryName) => {
   });
 
   let index = 0;
+
   const html = `
   <div class="container-video">
   <img src=${
@@ -255,8 +286,10 @@ const renderContent = (categoryName) => {
 </div>
 <section class="main-content">
   <div class="source">
-    <h2 class="source-title">${app.children[index].title}</h2>
-    <p class="source-description">
+    <h2 data-section="sectionApps" data-value=${`app-${app.children[index].id}-title`} class="source-title">${
+    app.children[index].title
+  }</h2>
+    <p data-section="sectionApps" data-value=${`app-${app.children[index].id}-description`} class="source-description">
     ${app.children[index].description}
     </p>
     <a href=${
@@ -272,7 +305,9 @@ const renderContent = (categoryName) => {
           />
         </g>
       </svg>
-      Iniciar
+      <span data-section="slider" data-value="slider-btn-play">${
+        slider["slider-btn-play"]
+      }</span>
     </a>
   </div>
   <h3 class="category">${categoryName}</h3>
@@ -336,13 +371,28 @@ const renderConfigMenu = () => {
 
   const listTabs = configListTab.querySelectorAll("li");
 
+  menuConfigurations.forEach((item) => {
+    configListContent.insertAdjacentHTML("beforeend", item.content);
+  });
+
   listTabs.forEach((tab, index) => {
     tab.addEventListener("click", () => {
       listTabs.forEach((tab) => tab.classList.remove("active"));
       tab.classList.add("active");
 
-      configListContent.innerHTML = menuConfigurations[index].content;
-      configListContent.firstElementChild.classList.add("active");
+      configListContent
+        .querySelectorAll(".config-list-item")
+        .forEach((item, index) => {
+          item.dataset.index = index;
+          item.classList.add("hide");
+        });
+
+      const activeItem = configListContent.querySelector(
+        `[data-index="${index}"]`
+      );
+      if (activeItem) {
+        activeItem.classList.remove("hide");
+      }
     });
   });
 
@@ -350,12 +400,10 @@ const renderConfigMenu = () => {
   listTabs[0].click();
 };
 
-document.addEventListener("DOMContentLoaded", async () => {
-  const selectedLanguage = localStorage.getItem("language");
+document.addEventListener("DOMContentLoaded", () => {
   if (selectedLanguage) {
-    await changeLanguage(selectedLanguage);
+    changeLanguage(selectedLanguage);
   }
-
   if (SHOW_INTRO) {
     setTimeout(() => {
       intro.remove();
