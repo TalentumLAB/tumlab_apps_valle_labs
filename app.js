@@ -30,6 +30,7 @@ const configListTabDesktop = document.querySelector(".config-list-tab-desktop");
 const configListTabMobile = document.querySelector(".config-list-tab-mobile");
 const configListContent = document.querySelector(".config-list-content");
 
+
 const modalTitle = document.querySelector(".modal-title");
 
 const selectedLanguage = localStorage.getItem(LANGUAGE);
@@ -73,7 +74,9 @@ const visibleCategory = headerMenulist.filter(
 
 /* Send to home */
 logo.addEventListener("click", () => {
+
   modalConfig.open = false;
+
   renderContent(visibleCategory[0].name);
 
   const firstItem = menuList.querySelector("li:first-child");
@@ -203,6 +206,7 @@ function generateList({ arrayList, section = "", value = "" }) {
   });
 }
 
+
 const headerList = generateList({
   arrayList: visibleCategory,
   section: "header",
@@ -214,6 +218,10 @@ const mobileMenuList = generateList({
   value: "category",
 });
 const menuConfig = generateList({ arrayList: menuConfigurations });
+const headerList = generateList(visibleCategory);
+const mobileMenuList = generateList(visibleCategory);
+const menuConfig = generateList(menuConfigurations);
+
 
 headerList.forEach((li, index) => {
   if (index === 0) li.classList.add("active");
@@ -305,6 +313,7 @@ const renderContent = (categoryName) => {
           />
         </g>
       </svg>
+
       <span data-section="slider" data-value="slider-btn-play">${
         slider["slider-btn-play"]
       }</span>
@@ -414,6 +423,7 @@ document.addEventListener("DOMContentLoaded", () => {
       footer.style.display = "flex";
       renderContent(visibleCategory[0].name);
       renderConfigMenu();
+
     }, 5600);
   } else {
     intro.remove();
@@ -421,5 +431,6 @@ document.addEventListener("DOMContentLoaded", () => {
     footer.style.display = "flex";
     renderContent(visibleCategory[0].name);
     renderConfigMenu();
+
   }
 });
