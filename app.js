@@ -8,7 +8,9 @@ import {
 import { renderSlider } from "./components/slider.js";
 import { textChangeLanguage } from "./locales/index.js";
 
-const SHOW_INTRO = false;
+const { slider, modal } = textChangeLanguage();
+
+const SHOW_INTRO = true;
 
 const intro = document.querySelector(".intro");
 const header = document.querySelector(".header");
@@ -23,7 +25,7 @@ const checkbox = document.querySelector("#menuToggle input[type='checkbox']");
 const overlay = document.querySelector(".overlay");
 const modalConfig = document.querySelector(".modal-config");
 
-const btnRestart = document.querySelectorAll(".btn-restart");
+const restartButtons = document.querySelectorAll(".btn-restart");
 const btnConfig = document.querySelectorAll(".btn-config");
 
 const configListTabDesktop = document.querySelector(".config-list-tab-desktop");
@@ -35,31 +37,10 @@ const btnConfigurationMobile = document.querySelector(
   ".btn-configurations-mobile .btn-icon-mobile [data-section='configurations'][data-value='title']"
 );
 
-const selectedLanguage = localStorage.getItem(LANGUAGE);
-
 let textsToChange = "";
-
-const { slider, modal } = textChangeLanguage();
 
 modalTitle.innerHTML = modal.title;
 btnConfigurationMobile.innerHTML = modal.title;
-
-const getRadioButtons = () => {
-  return document.querySelectorAll("input[name='lang']");
-};
-
-document.addEventListener("click", function () {
-  const radioButtonLanguages = getRadioButtons();
-  textsToChange = document.querySelectorAll("[data-section]");
-
-  radioButtonLanguages.forEach((radio) => {
-    radio.addEventListener("change", () => {
-      changeLanguage(radio.value);
-      localStorage.setItem("language", radio.value);
-      /* location.reload(); */
-    });
-  });
-});
 
 function changeLanguage(language) {
   const texts = textChangeLanguage(language);
@@ -70,6 +51,8 @@ function changeLanguage(language) {
 
     textChange.innerHTML = texts[section][value];
   }
+
+  location.reload();
 }
 
 const visibleCategory = headerMenulist.filter(
@@ -77,7 +60,9 @@ const visibleCategory = headerMenulist.filter(
 );
 
 /* Send to home */
-logo.addEventListener("click", () => {
+logo.addEventListener("click", navigateToHome);
+
+function navigateToHome() {
   modalConfig.open = false;
 
   renderContent(visibleCategory[0].name);
@@ -88,10 +73,12 @@ logo.addEventListener("click", () => {
   items.forEach((item) => item.classList.remove("active"));
 
   firstItem.classList.add("active");
-});
+}
 
 /* Close menu mobile  */
-document.addEventListener("click", function (event) {
+document.addEventListener("click", closeMenuMobile);
+
+function closeMenuMobile(event) {
   const menu = document.querySelector("#menuToggle");
   const isClickInsideMenu = menu.contains(event.target);
 
@@ -99,14 +86,10 @@ document.addEventListener("click", function (event) {
     checkbox.checked = false;
     overlay.classList.remove("open");
   }
-});
+}
 
 checkbox.addEventListener("change", function () {
-  if (this.checked) {
-    overlay.classList.add("open");
-  } else {
-    overlay.classList.remove("open");
-  }
+  overlay.classList.toggle("open");
 });
 
 function toggleCheckbox() {
@@ -143,15 +126,13 @@ function restartSlider() {
 }
 
 /* Restart slider */
-btnRestart.forEach((btn) => {
+restartButtons.forEach((btn) => {
   btn.addEventListener("click", () => restartSlider());
 });
 
 /* Configuration menu */
 btnConfig.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    toggleModal();
-  });
+  btn.addEventListener("click", () => toggleModal());
 });
 
 function generateList({ arrayList, section = "", value = "" }) {
@@ -415,26 +396,48 @@ const renderConfigMenu = () => {
   });
 };
 
+function initIntroAndSlider() {
+  intro.remove();
+  renderSlider(infoSlider);
+}
+
+function initHeaderAndFooter() {
+  header.style.display = "flex";
+  footer.style.display = "flex";
+  renderContent(visibleCategory[0].name);
+  renderConfigMenu();
+  setUpLanguageSelection();
+}
+
+function setUpLanguageSelection() {
+  const radioButtons = document.querySelectorAll("input[name='lang']");
+  textsToChange = document.querySelectorAll("[data-section]");
+  const storedLanguage = localStorage.getItem(LANGUAGE);
+
+  radioButtons.forEach((radio) => {
+    if (storedLanguage && radio.value === storedLanguage) {
+      radio.checked = true;
+    } else if (!storedLanguage && radio.value === "en") {
+      radio.checked = true;
+    }
+
+    addChangeListener(radio);
+  });
+}
+
+function addChangeListener(radio) {
+  radio.addEventListener("change", () => {
+    changeLanguage(radio.value);
+    localStorage.setItem(LANGUAGE, radio.value);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  if (selectedLanguage) {
-    changeLanguage(selectedLanguage);
-  }
   if (SHOW_INTRO) {
-    setTimeout(() => {
-      intro.remove();
-      renderSlider(infoSlider);
-    }, 5500);
-    setTimeout(() => {
-      header.style.display = "flex";
-      footer.style.display = "flex";
-      renderContent(visibleCategory[0].name);
-      renderConfigMenu();
-    }, 5600);
+    setTimeout(initIntroAndSlider, 5500);
+    setTimeout(initHeaderAndFooter, 5600);
   } else {
     intro.remove();
-    header.style.display = "flex";
-    footer.style.display = "flex";
-    renderContent(visibleCategory[0].name);
-    renderConfigMenu();
+    initHeaderAndFooter();
   }
 });

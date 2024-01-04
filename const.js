@@ -101,7 +101,7 @@ export const menuConfigurations = [
   </div>
     `,
   },
-   {
+  {
     id: "language",
     name: `${configurations["configurations-list-language"]}`,
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -121,7 +121,6 @@ export const menuConfigurations = [
         name="lang"
         value="en"
         id="english"
-      
         checked
       />
       <label for="english"> English (US) </label>
@@ -270,7 +269,6 @@ export const apps = [
         url: "http://tumlab.local:8087/phet_es_2022-12/A/index.html",
       },
       {
-
         id: "simulators-english",
         order: 1,
         is_show: true,
