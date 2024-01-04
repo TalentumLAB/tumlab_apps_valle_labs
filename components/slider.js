@@ -1,3 +1,7 @@
+import { textChangeLanguage } from "../locales/index.js";
+
+const { slider } = textChangeLanguage();
+
 const swiperContainer = document.querySelector(".swiper");
 
 function destroySlider(id) {
@@ -33,7 +37,7 @@ export const renderSlider = (arraySlides, node) => {
             />
           </g>
         </svg>
-        Omit
+        <span data-section="slider" data-value="slider-btn-omit">${slider["slider-btn-omit"]}</span>
       </button>
        `;
     }
@@ -49,7 +53,7 @@ export const renderSlider = (arraySlides, node) => {
             />
           </g>
         </svg>
-        Next
+        <span data-section="slider" data-value="slider-btn-next">${slider["slider-btn-next"]}</span>
       </button>
        `;
     }
@@ -62,7 +66,7 @@ export const renderSlider = (arraySlides, node) => {
         <path fill-rule="evenodd" clip-rule="evenodd" d="M2 9C2 4.86 5.36 1.5 9.5 1.5C13.64 1.5 17 4.86 17 9C17 13.14 13.64 16.5 9.5 16.5C5.36 16.5 2 13.14 2 9ZM12.5 9L8 5.625V12.375L12.5 9Z" fill="white"/>
         </g>
         </svg>
-        Start
+        <span data-section="slider" data-value="slider-btn-play">${slider["slider-btn-play"]}</span>
       </button>
        `;
     }
@@ -71,7 +75,7 @@ export const renderSlider = (arraySlides, node) => {
             <section class="wrapper-container">
               <img src="${item.image}" class="wrapper-img" alt="img" />
               <div class="info">
-              ${item.smallTitile ? `<small>${item.smallTitile}</small>` : ""}
+              ${item.smallTitle ? `<small>${item.smallTitle}</small>` : ""}
                 <h1>${item.title}</h1>
                 <div class="info-content">${item.content}</div>
               </div>

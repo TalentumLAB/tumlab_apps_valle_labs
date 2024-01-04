@@ -3,10 +3,12 @@ import {
   headerMenulist,
   menuConfigurations,
   apps,
+  LANGUAGE,
 } from "./const.js";
 import { renderSlider } from "./components/slider.js";
+import { textChangeLanguage } from "./locales/index.js";
 
-const SHOW_INTRO = true;
+const SHOW_INTRO = false;
 
 const intro = document.querySelector(".intro");
 const header = document.querySelector(".header");
@@ -28,12 +30,53 @@ const configListTabDesktop = document.querySelector(".config-list-tab-desktop");
 const configListTabMobile = document.querySelector(".config-list-tab-mobile");
 const configListContent = document.querySelector(".config-list-content");
 
+
+const modalTitle = document.querySelector(".modal-title");
+
+const selectedLanguage = localStorage.getItem(LANGUAGE);
+
+let textsToChange = "";
+
+const { slider, modal } = textChangeLanguage();
+
+modalTitle.innerHTML = modal.title;
+
+const getRadioButtons = () => {
+  return document.querySelectorAll("input[name='lang']");
+};
+
+document.addEventListener("click", function () {
+  const radioButtonLanguages = getRadioButtons();
+  textsToChange = document.querySelectorAll("[data-section]");
+
+  radioButtonLanguages.forEach((radio) => {
+    radio.addEventListener("change", () => {
+      changeLanguage(radio.value);
+      localStorage.setItem("language", radio.value);
+    });
+  });
+});
+
+function changeLanguage(language) {
+  const texts = textChangeLanguage(language);
+
+  for (const textChange of textsToChange) {
+    const section = textChange.dataset.section;
+    const value = textChange.dataset.value;
+
+    textChange.innerHTML = texts[section][value];
+  }
+}
+
 const visibleCategory = headerMenulist.filter(
   (header) => header.is_enable !== false
 );
 
 /* Send to home */
 logo.addEventListener("click", () => {
+
+  modalConfig.open = false;
+
   renderContent(visibleCategory[0].name);
 
   const firstItem = menuList.querySelector("li:first-child");
@@ -105,22 +148,42 @@ btnRestart.forEach((btn) => {
 btnConfig.forEach((btn) => {
   btn.addEventListener("click", () => {
     toggleModal();
-    renderConfigMenu();
   });
 });
 
-function generateList(arrayList) {
-  return arrayList.map((item, index) => {
+function generateList({ arrayList, section = "", value = "" }) {
+  return arrayList.map((item) => {
     const li = document.createElement("li");
-    li.setAttribute("data-index", index);
+
+    if (section !== "" && !item.icon) {
+      li.setAttribute("data-section", section);
+    }
+
+    if (value !== "" && !item.icon) {
+      li.setAttribute(
+        "data-value",
+        `${section}-${value}-${item.id ?? item.name}`
+      );
+    }
 
     if (item.icon) {
       const parser = new DOMParser();
       const svgDoc = parser.parseFromString(item.icon, "image/svg+xml");
       const svgElement = svgDoc.documentElement;
 
-      li.appendChild(svgElement);
-      li.insertAdjacentText("beforeend", ` ${item.name}`);
+      const span = document.createElement("span");
+
+      if (section) span.dataset.section = section;
+
+      if (value)
+        span.dataset.value = `${section}-${value}-${item.id ?? item.name}`;
+
+      span.insertAdjacentHTML("afterbegin", item.name);
+
+      li.style.display = "flex";
+      li.style.gap = "2px";
+      li.prepend(svgElement);
+      li.appendChild(span);
     } else {
       li.innerText = item.name;
     }
@@ -143,9 +206,22 @@ function generateList(arrayList) {
   });
 }
 
+
+const headerList = generateList({
+  arrayList: visibleCategory,
+  section: "header",
+  value: "category",
+});
+const mobileMenuList = generateList({
+  arrayList: visibleCategory,
+  section: "header",
+  value: "category",
+});
+const menuConfig = generateList({ arrayList: menuConfigurations });
 const headerList = generateList(visibleCategory);
 const mobileMenuList = generateList(visibleCategory);
 const menuConfig = generateList(menuConfigurations);
+
 
 headerList.forEach((li, index) => {
   if (index === 0) li.classList.add("active");
@@ -201,6 +277,7 @@ const renderContent = (categoryName) => {
   });
 
   let index = 0;
+
   const html = `
   <div class="container-video">
   <img src=${
@@ -217,8 +294,10 @@ const renderContent = (categoryName) => {
 </div>
 <section class="main-content">
   <div class="source">
-    <h2 class="source-title">${app.children[index].title}</h2>
-    <p class="source-description">
+    <h2 data-section="sectionApps" data-value=${`app-${app.children[index].id}-title`} class="source-title">${
+    app.children[index].title
+  }</h2>
+    <p data-section="sectionApps" data-value=${`app-${app.children[index].id}-description`} class="source-description">
     ${app.children[index].description}
     </p>
     <a href=${
@@ -234,7 +313,10 @@ const renderContent = (categoryName) => {
           />
         </g>
       </svg>
-      Start
+
+      <span data-section="slider" data-value="slider-btn-play">${
+        slider["slider-btn-play"]
+      }</span>
     </a>
   </div>
   <h3 class="category">${categoryName}</h3>
@@ -278,7 +360,11 @@ const renderContent = (categoryName) => {
 };
 
 const renderConfigMenu = () => {
-  const menuConfigTab = generateList(menuConfigurations);
+  const menuConfigTab = generateList({
+    arrayList: menuConfigurations,
+    section: "configurations",
+    value: "list",
+  });
 
   let configListTab;
 
@@ -288,23 +374,34 @@ const renderConfigMenu = () => {
     configListTab = configListTabDesktop;
   }
 
-  configListTab.innerHTML = "";
-  configListContent.innerHTML = "";
-
   menuConfigTab.forEach((li) => {
     return configListTab.append(li);
   });
 
   const listTabs = configListTab.querySelectorAll("li");
 
+  menuConfigurations.forEach((item) => {
+    configListContent.insertAdjacentHTML("beforeend", item.content);
+  });
+
   listTabs.forEach((tab, index) => {
     tab.addEventListener("click", () => {
       listTabs.forEach((tab) => tab.classList.remove("active"));
       tab.classList.add("active");
 
-      configListContent.innerHTML = "";
-      configListContent.innerHTML = menuConfigurations[index].content;
-      configListContent.firstElementChild.classList.add("active");
+      configListContent
+        .querySelectorAll(".config-list-item")
+        .forEach((item, index) => {
+          item.dataset.index = index;
+          item.classList.add("hide");
+        });
+
+      const activeItem = configListContent.querySelector(
+        `[data-index="${index}"]`
+      );
+      if (activeItem) {
+        activeItem.classList.remove("hide");
+      }
     });
   });
 
@@ -313,6 +410,9 @@ const renderConfigMenu = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+  if (selectedLanguage) {
+    changeLanguage(selectedLanguage);
+  }
   if (SHOW_INTRO) {
     setTimeout(() => {
       intro.remove();
@@ -322,11 +422,15 @@ document.addEventListener("DOMContentLoaded", () => {
       header.style.display = "flex";
       footer.style.display = "flex";
       renderContent(visibleCategory[0].name);
+      renderConfigMenu();
+
     }, 5600);
   } else {
     intro.remove();
     header.style.display = "flex";
     footer.style.display = "flex";
     renderContent(visibleCategory[0].name);
+    renderConfigMenu();
+
   }
 });
