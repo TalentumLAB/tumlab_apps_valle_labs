@@ -132,8 +132,21 @@ restartButtons.forEach((btn) => {
 
 /* Configuration menu */
 btnConfig.forEach((btn) => {
-  btn.addEventListener("click", () => toggleModal());
+  btn.addEventListener("click", () => openConfigurationMenu());
 });
+
+function openConfigurationMenu() {
+  toggleModal();
+  const configItems = configListContent.querySelectorAll(".config-list-item");
+  configItems.forEach(
+    (item, index) => index !== 0 && item.classList.add("hide")
+  );
+
+  const activeItem = configListContent.querySelector(`[data-index="0"]`);
+  if (activeItem) {
+    activeItem.classList.remove("hide");
+  }
+}
 
 function generateList({ arrayList, section = "", value = "" }) {
   return arrayList.map((item) => {
