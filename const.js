@@ -9,7 +9,7 @@ export const infoSlider = [
     smallTitle: `${slider["slider-first-slide-smallTitle"]}`,
     title: `${slider["slider-first-slide-title"]}`,
     content: `<p data-section="slider" data-value="slider-first-slide-content">${slider["slider-first-slide-content"]}</p>`,
-    image: "assets/img/bg-poster.png",
+    image: "assets/img/bg-poster.webp",
     buttons: ["omit", "next"],
   },
 
@@ -34,7 +34,7 @@ export const infoSlider = [
         </li>
     </ol>
       `,
-    image: "assets/img/bg-poster-2.png",
+    image: "assets/img/bg-poster-2.webp",
     buttons: ["play"],
   },
 ];
@@ -188,7 +188,7 @@ export const apps = [
         id: "tumlab",
         order: 1,
         is_show: true,
-        thumbnail: "./assets/recursos-talentum/tumlab_thumbnail.png",
+        thumbnail: "./assets/recursos-talentum/tumlab_thumbnail.webp",
         video: "./assets/recursos-talentum/videos/recursos-talentum-tumlab.mp4",
         title: `${sectionApps["app-tumlab-title"]}`,
         description: `${sectionApps["app-tumlab-description"]}`,
@@ -198,7 +198,7 @@ export const apps = [
         id: "lms",
         order: 2,
         is_show: true,
-        thumbnail: "./assets/recursos-talentum/lms_thumbnail.png",
+        thumbnail: "./assets/recursos-talentum/lms_thumbnail.webp",
         video: "./assets/recursos-talentum/videos/recursos-talentum-lms.mp4",
         title: `${sectionApps["app-lms-title"]}`,
         description: `${sectionApps["app-lms-description"]}`,
@@ -208,7 +208,7 @@ export const apps = [
         id: "steam-classrooms-patia",
         order: 3,
         is_show: true,
-        thumbnail: "./assets/recursos-talentum/patia_thumbnail.png",
+        thumbnail: "./assets/recursos-talentum/patia_thumbnail.webp",
         video: "./assets/recursos-talentum/videos/recursos-talentum-patia.mp4",
         title: `${sectionApps["app-steam-classrooms-patia-title"]}`,
         description: `${sectionApps["app-steam-classrooms-patia-description"]}`,
@@ -218,7 +218,7 @@ export const apps = [
         id: "steam-classrooms-valle",
         order: 4,
         is_show: true,
-        thumbnail: "./assets/recursos-talentum/steam-valle_thumbnail.png",
+        thumbnail: "./assets/recursos-talentum/steam-valle_thumbnail.webp",
         video:
           "./assets/recursos-talentum/videos/recursos-talentum-steam-valle.mp4",
         title: `${sectionApps["app-steam-classrooms-valle-title"]}`,
@@ -235,7 +235,7 @@ export const apps = [
         id: "universum",
         order: 1,
         is_show: true,
-        thumbnail: "./assets/herramientas-digitales/universum_thumbnail.png",
+        thumbnail: "./assets/herramientas-digitales/universum_thumbnail.webp",
         video:
           "./assets/herramientas-digitales/videos/herramientas-digitales-universum.mp4",
         title: `${sectionApps["app-universum-title"]}`,
@@ -246,7 +246,7 @@ export const apps = [
         id: "agau",
         order: 2,
         is_show: false,
-        thumbnail: "./assets/herramientas-digitales/agau_thumbnail.png",
+        thumbnail: "./assets/herramientas-digitales/agau_thumbnail.webp",
         video:
           "./assets/herramientas-digitales/videos/herramientas-digitales-agau.mp4",
         title: `${sectionApps["app-agau-title"]}`,
@@ -262,7 +262,7 @@ export const apps = [
         id: "simulators-spanish",
         order: 2,
         is_show: false,
-        thumbnail: "./assets/simuladores/simulators-spanish_thumbnail.png",
+        thumbnail: "./assets/simuladores/simulators-spanish_thumbnail.webp",
         video: "./assets/simuladores/videos/simulators-spanish.mov",
         title: `${sectionApps["app-simulators-spanish-title"]}`,
         description: `${sectionApps["app-simulators-spanish-description"]}`,
@@ -272,7 +272,7 @@ export const apps = [
         id: "simulators-english",
         order: 1,
         is_show: true,
-        thumbnail: "./assets/simuladores/simulators-english_thumbnail.png",
+        thumbnail: "./assets/simuladores/simulators-english_thumbnail.webp",
         video: "./assets/simuladores/videos/simulators-english.mov",
         title: `${sectionApps["app-simulators-english-title"]}`,
         description: `${sectionApps["app-simulators-english-description"]}`,
@@ -287,7 +287,7 @@ export const apps = [
         id: "apache",
         order: 1,
         is_show: true,
-        thumbnail: "./assets/infraestructura-datos/superset_thumbnail.png",
+        thumbnail: "./assets/infraestructura-datos/superset_thumbnail.webp",
         video:
           "./assets/infraestructura-datos/videos/infraestructura-datos-apache-superset.mp4",
         title: `${sectionApps["app-apache-title"]}`,
@@ -304,7 +304,7 @@ export const apps = [
         id: "wikipedia",
         order: 1,
         is_show: true,
-        thumbnail: "./assets/recursos-educativos/wikipedia_thumbnail.png",
+        thumbnail: "./assets/recursos-educativos/wikipedia_thumbnail.webp",
         video:
           "./assets/recursos-educativos/videos/recursos-educativos-wikipedia.mp4",
         title: `${sectionApps["app-wikipedia-title"]}`,
@@ -316,8 +316,8 @@ export const apps = [
         id: "media-cms",
         order: 2,
         is_show: true,
-        thumbnail: "./assets/recursos-educativos/mediacms_thumbnail.png",
-        bg: "./assets/recursos-educativos/mediacms_bg.png",
+        thumbnail: "./assets/recursos-educativos/mediacms_thumbnail.webp",
+        bg: "./assets/recursos-educativos/mediacms_bg.webp",
         title: `${sectionApps["app-media-cms-title"]}`,
         description: `${sectionApps["app-media-cms-description"]}`,
         url: "http://tumlab.local:8085",
@@ -326,7 +326,8 @@ export const apps = [
         id: "open-street-map",
         order: 3,
         is_show: true,
-        thumbnail: "./assets/recursos-educativos/open-street-map_thumbnail.png",
+        thumbnail:
+          "./assets/recursos-educativos/open-street-map_thumbnail.webp",
         video:
           "./assets/recursos-educativos/videos/recursos-educativos-open-street-map.mp4",
         title: `${sectionApps["app-open-street-map-title"]}`,
@@ -337,7 +338,7 @@ export const apps = [
         id: "scratch",
         order: 4,
         is_show: false,
-        thumbnail: "./assets/recursos-educativos/scratch_thumbnail.png",
+        thumbnail: "./assets/recursos-educativos/scratch_thumbnail.webp",
         video:
           "./assets/recursos-educativos/videos/recursos-educativos-scratch.mp4",
         title: `${sectionApps["app-scratch-title"]}`,
