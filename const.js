@@ -1,10 +1,12 @@
 import { textChangeLanguage } from "./locales/index.js";
+import tumlab from "./info/agent.json" assert { type: "json" };
 
 export const LANGUAGE = "language";
 export const DEFAULT_LANGUAGE = "es";
 const SUPPORT_EMAIL = "support@tumlab.com";
 const ACTIVATION_DATE = "18/01/2024";
-const LICENSE = `"Lab_server_license": "TLab-Sync1_0-CES-012024-TALENTUM-01"`;
+const license_sync = tumlab.tumlab.information[7].license_sync;
+const LICENSE = `"Lab_server_license": "${license_sync}"`;
 
 const { configurations, slider, header, sectionApps } = textChangeLanguage();
 
