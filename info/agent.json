@@ -1,0 +1,33 @@
+{
+  "tumlab": {
+    "information": [
+      {
+        "id_batch": 1
+      },
+      {
+        "id_project": 4
+      },
+      {
+        "id_deparment": 19
+      },
+      {
+        "id_town": 19455
+      },
+      {
+        "id_institution": 0
+      },
+      {
+        "id_branch": 0
+      },
+      {
+        "mac_address": "ac50de1b5f91"
+      },
+      {
+        "license_sync": "TLab-Sync1_0-MIR-062023-BEGTZ72-17"
+      },
+      {
+        "license_perpetual_lms": "TLab-Campus1_0-MIR-062023-EKSST79-17"
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Visualización de JSON en una caja de texto</title>
+
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <img src="logo.png" alt="Tumlab logo" />
+      </div>
+    </header>
+
+    <div class="container">
+      <strong class="title">TUMLAB Information:</strong>
+      <div id="jsonOutput"></div>
+    </div>
+
+    <script type="text/javascript" src="json-viewer.min.js"></script>
+    <script type="text/javascript">
+      var jsonUrl = "http://tumlab.local/info/agent.json"; // Variable global con la ruta externa del JSON
+
+      // Realiza una solicitud HTTP GET para obtener el contenido del archivo JSON
+      fetch(jsonUrl)
+        // .then((response) => response.json()) // Convierte el contenido en un objeto JSON
+        .then((response) => response.text())
+        .then((data) => {
+          // Muestra el objeto JSON en el textarea
+          const tree = jsonview.create(data);
+          jsonview.render(tree, document.querySelector("#jsonOutput"));
+
+          // Todos desplegados, si no se quieren desplegados comentar linea
+          jsonview.expand(tree);
+        })
+        .catch((error) =>
+          console.error("Error al cargar el archivo JSON:", error)
+        );
+    </script>
+  </body>
+</html>
