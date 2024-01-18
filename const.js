@@ -340,12 +340,23 @@ export const apps = [
       {
         id: "scratch",
         order: 4,
-        is_show: false,
+        is_show: true,
         thumbnail: "./assets/recursos-educativos/scratch_thumbnail.webp",
         video:
           "./assets/recursos-educativos/videos/recursos-educativos-scratch.mp4",
         title: `${sectionApps["app-scratch-title"]}`,
         description: `${sectionApps["app-scratch-description"]}`,
+        url: "http://192.168.4.1:8086",
+      },
+      {
+        id: "krita",
+        order: 5,
+        is_show: true,
+        thumbnail: "./assets/recursos-educativos/krita_thumbnail.webp",
+        video:
+          "./assets/recursos-educativos/videos/recursos-educativos-krita.mp4",
+        title: `${sectionApps["app-krita-title"]}`,
+        description: `${sectionApps["app-krita-description"]}`,
         url: "http://192.168.4.1:8086",
       },
     ],

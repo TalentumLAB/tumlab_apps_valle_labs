@@ -110,5 +110,8 @@ export const es = {
     "app-scratch-title": "Scratch",
     "app-scratch-description":
       "La mayor comunidad de programación para niños desarrollada por la Fundación Scratch. Su lenguaje sencillo les permite crear historias digitales, juegos y animaciones, además de fomentar el pensamiento computacional, la creatividad, la resolución de problemas y la igualdad. ¡Descubre Scratch e inspira a tus hijos a explorar el mundo digital!",
+    "app-krita-title": "Krita",
+    "app-krita-description":
+      "Descubre Krita, la joya de la pintura digital. Gratuito y de código libre, creado por artistas para artistas. Ideal para arte conceptual, texturas, ilustraciones y cómics. ¡Desata tu creatividad con herramientas innovadoras y potentes funciones para principiantes y expertos!",
   },
 };
