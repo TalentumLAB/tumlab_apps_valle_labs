@@ -1,9 +1,10 @@
 import { textChangeLanguage } from "./locales/index.js";
 
-export const DEFAULT_LANGUAGE = "es";
 export const LANGUAGE = "language";
+export const DEFAULT_LANGUAGE = "es";
 const SUPPORT_EMAIL = "support@tumlab.com";
 const ACTIVATION_DATE = "18/01/2024";
+const LICENSE = `"Lab_server_license": "TLab-Sync1_0-CES-012024-TALENTUM-01"`;
 
 const { configurations, slider, header, sectionApps } = textChangeLanguage();
 
@@ -96,8 +97,7 @@ export const menuConfigurations = [
     <div class="license-key">
       <span
       class="activation"
-        >"Lab_server_license":
-        "TLab-Sync1_0-CES-012024-TALENTUM-01"</span
+        >${LICENSE}</span
       >
       <p><span data-section="configurations" data-value="configurations-license-activation">${configurations["configurations-license-activation"]}</span> <strong data-section="configurations" data-value="configurations-license-date">${ACTIVATION_DATE}</strong></p>
     </div>
