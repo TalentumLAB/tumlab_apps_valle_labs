@@ -2,6 +2,7 @@ import { textChangeLanguage } from "./locales/index.js";
 
 export const DEFAULT_LANGUAGE = "es";
 export const LANGUAGE = "language";
+const SUPPORT_EMAIL = "support@tumlab.com";
 
 const { configurations, slider, header, sectionApps } = textChangeLanguage();
 
@@ -147,7 +148,7 @@ export const menuConfigurations = [
               <p data-section="configurations" data-value="configurations-help-description">
              ${configurations["configurations-help-description"]}
               </p>
-              <h4>support@tumlab.com</h4>
+              <h4>${SUPPORT_EMAIL}</h4>
     </div>
   `,
   },
