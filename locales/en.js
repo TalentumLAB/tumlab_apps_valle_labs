@@ -64,8 +64,6 @@ export const en = {
     "configurations-license-description":
       "Below, you will find the serial number for the license:",
     "configurations-license-activation": "Activation date:",
-    "configurations-license-date": "Jan 18. 2023",
-
     "configurations-help-description":
       "If you have any difficulties or need assistance, our technical support team is here to help. Please reach out to us at the following email address:",
 

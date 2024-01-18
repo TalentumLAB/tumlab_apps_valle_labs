@@ -3,6 +3,7 @@ import { textChangeLanguage } from "./locales/index.js";
 export const DEFAULT_LANGUAGE = "es";
 export const LANGUAGE = "language";
 const SUPPORT_EMAIL = "support@tumlab.com";
+const ACTIVATION_DATE = "18/01/2024";
 
 const { configurations, slider, header, sectionApps } = textChangeLanguage();
 
@@ -98,7 +99,7 @@ export const menuConfigurations = [
         >"Lab_server_license":
         "TLab-Sync1_0-CES-012024-TALENTUM-01"</span
       >
-      <p><span data-section="configurations" data-value="configurations-license-activation">${configurations["configurations-license-activation"]}</span> <strong data-section="configurations" data-value="configurations-license-date">${configurations["configurations-license-date"]}</strong></p>
+      <p><span data-section="configurations" data-value="configurations-license-activation">${configurations["configurations-license-activation"]}</span> <strong data-section="configurations" data-value="configurations-license-date">${ACTIVATION_DATE}</strong></p>
     </div>
   </div>
     `,
