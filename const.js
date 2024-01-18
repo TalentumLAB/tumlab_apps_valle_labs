@@ -1,5 +1,6 @@
 import { textChangeLanguage } from "./locales/index.js";
 
+export const DEFAULT_LANGUAGE = "es";
 export const LANGUAGE = "language";
 
 const { configurations, slider, header, sectionApps } = textChangeLanguage();

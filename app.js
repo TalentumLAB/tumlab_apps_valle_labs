@@ -4,6 +4,7 @@ import {
   menuConfigurations,
   apps,
   LANGUAGE,
+  DEFAULT_LANGUAGE,
 } from "./const.js";
 import { renderSlider } from "./components/slider.js";
 import { textChangeLanguage } from "./locales/index.js";
@@ -430,7 +431,7 @@ function setUpLanguageSelection() {
   radioButtons.forEach((radio) => {
     if (storedLanguage && radio.value === storedLanguage) {
       radio.checked = true;
-    } else if (!storedLanguage && radio.value === "en") {
+    } else if (!storedLanguage && radio.value === DEFAULT_LANGUAGE) {
       radio.checked = true;
     }
 
