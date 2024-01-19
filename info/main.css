@@ -4,43 +4,47 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #1c2833;
+  color: #e9e9e9;
+}
+
 header {
   display: block;
   text-align: center;
   padding: 16px;
 }
 
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 .title {
   display: block;
   margin-bottom: 16px;
-}
-
-#jsonOutput {
-  max-width: 100%;
-  max-height: 70vh;
-  overflow-y: auto;
+  font-weight: bold;
 }
 
 #jsonOutput .json-container {
   padding: 16px;
+  font-family: inherit;
+  background-color: #1c2833;
 }
 
-@media (prefers-color-scheme: dark) {
-  #jsonOutput .json-container {
-    background-color: #222222;
-  }
-
-  #jsonOutput .json-container .json-key {
-    color: #CCC;
-  }
+.json-separator {
+  color: #fff;
 }
 
-.container {
-  position: relative;
-  max-width: 1280px;
-  margin: 0 auto;
+.line .json-value.json-string {
+  color: #01ff70;
+}
+.json-container .line .caret-icon .fa-caret-down {
+  border-color: #fbfbfbd9 transparent;
 }
 
-body {
-  font-family: Monserrat, 'sans-serif';
+#jsonOutput .json-container .json-key {
+  color: #1bc7c5;
 }
