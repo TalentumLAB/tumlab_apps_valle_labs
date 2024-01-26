@@ -1,12 +1,20 @@
 import { textChangeLanguage } from "./locales/index.js";
-import tumlab from "./info/agent.json" assert { type: "json" };
 
 export const LANGUAGE = "language";
+export const ACTIVATION_DATE = "18/01/2024";
 export const DEFAULT_LANGUAGE = "es";
 const SUPPORT_EMAIL = "support@tumlab.com";
-const ACTIVATION_DATE = "18/01/2024";
-const license_sync = tumlab.tumlab.information[7].license_sync;
-const LICENSE = `"Lab_server_license": "${license_sync}"`;
+
+export async function getLicense() {
+  try {
+    const response = await fetch("/info/agent.json");
+    const data = await response.json();
+    const license_sync = data.tumlab.information[7].license_sync;
+    return `"Lab_server_license": "${license_sync}"`;
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 const { configurations, slider, header, sectionApps } = textChangeLanguage();
 
@@ -99,7 +107,7 @@ export const menuConfigurations = [
     <div class="license-key">
       <span
       class="activation"
-        >${LICENSE}</span
+        ></span
       >
       <p><span data-section="configurations" data-value="configurations-license-activation">${configurations["configurations-license-activation"]}</span> <strong data-section="configurations" data-value="configurations-license-date">${ACTIVATION_DATE}</strong></p>
     </div>

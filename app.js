@@ -5,11 +5,13 @@ import {
   apps,
   LANGUAGE,
   DEFAULT_LANGUAGE,
+  ACTIVATION_DATE,
+  getLicense,
 } from "./const.js";
 import { renderSlider } from "./components/slider.js";
 import { textChangeLanguage } from "./locales/index.js";
 
-const { slider, modal } = textChangeLanguage();
+const { slider, modal, configurations } = textChangeLanguage();
 
 const SHOW_INTRO = true;
 
@@ -356,7 +358,28 @@ const renderContent = (categoryName) => {
   });
 };
 
-const renderConfigMenu = () => {
+const renderConfigMenu = async () => {
+  const licenseIndex = menuConfigurations.findIndex(
+    (item) => item.id === "license"
+  );
+
+  const license = await getLicense();
+
+  if (licenseIndex !== -1) {
+    menuConfigurations[licenseIndex].content = `<div class="config-list-item">
+    <h2 data-section="configurations" data-value="configurations-list-license">${configurations["configurations-list-license"]}</h2>
+    <p data-section="configurations" data-value="configurations-license-description">${configurations["configurations-license-description"]}</p>
+
+    <div class="license-key">
+      <span
+      class="activation"
+        >${license}</span
+      >
+      <p><span data-section="configurations" data-value="configurations-license-activation">${configurations["configurations-license-activation"]}</span> <strong data-section="configurations" data-value="configurations-license-date">${ACTIVATION_DATE}</strong></p>
+    </div>
+  </div>`;
+  }
+
   const menuConfigTab = generateList({
     arrayList: menuConfigurations,
     section: "configurations",
@@ -415,11 +438,11 @@ function initIntroAndSlider() {
   renderSlider(infoSlider);
 }
 
-function initHeaderAndFooter() {
+async function initHeaderAndFooter() {
   header.style.display = "flex";
   footer.style.display = "flex";
   renderContent(visibleCategory[0].name);
-  renderConfigMenu();
+  await renderConfigMenu();
   setUpLanguageSelection();
 }
 
@@ -446,12 +469,12 @@ function addChangeListener(radio) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   if (SHOW_INTRO) {
     setTimeout(initIntroAndSlider, 5500);
-    setTimeout(initHeaderAndFooter, 5600);
+    setTimeout(await initHeaderAndFooter, 5600);
   } else {
     intro.remove();
-    initHeaderAndFooter();
+    await initHeaderAndFooter();
   }
 });
