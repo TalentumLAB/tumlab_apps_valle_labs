@@ -197,8 +197,8 @@ hr {
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
-  bottom: 274px;
-  left: -58px;
+  bottom: 304px;
+  left: -15px;
   width: 100%;
 }
 
@@ -390,6 +390,12 @@ hr {
   background: #f3f4f6;
   color: #303030;
   border-radius: 8px;
+}
+
+.btn-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .btn-sections details summary::-webkit-details-marker,
@@ -832,6 +838,15 @@ hr {
 
   .category {
     display: block;
+  }
+
+  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
+    bottom: 304px;
+    left: -15px;
+    width: 100%;
   }
 }
 
