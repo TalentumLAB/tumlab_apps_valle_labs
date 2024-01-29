@@ -142,7 +142,7 @@ hr {
 .swiper-button-container {
   width: 100%;
   position: relative;
-  z-index: 3;
+  z-index: 1000;
   display: flex;
   align-items: flex-start;
   flex-direction: row-reverse;
@@ -191,6 +191,7 @@ hr {
 .swiper-pagination {
   position: relative;
   text-align: right;
+  z-index: 1;
 }
 
 .swiper-horizontal > .swiper-pagination-bullets,
@@ -199,7 +200,8 @@ hr {
 .swiper-pagination-fraction {
   bottom: 304px;
   left: -15px;
-  width: 100%;
+  width: 18%;
+  margin-left: 82%;
 }
 
 .swiper-pagination span {
@@ -412,6 +414,10 @@ hr {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.btn-configurations-mobile {
+  padding: 1rem 0;
 }
 
 .btn-configurations-mobile summary {
@@ -844,9 +850,8 @@ hr {
   .swiper-pagination-bullets.swiper-pagination-horizontal,
   .swiper-pagination-custom,
   .swiper-pagination-fraction {
-    bottom: 304px;
+    bottom: 220px;
     left: -15px;
-    width: 100%;
   }
 }
 
