@@ -673,6 +673,10 @@ hr {
   overflow: auto;
 }
 
+.config-list-content::-webkit-scrollbar {
+  display: none;
+}
+
 .modal-center-content .modal-title {
   font-size: clamp(26px, 5vw, 42px);
 }
