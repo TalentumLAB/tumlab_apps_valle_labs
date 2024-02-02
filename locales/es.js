@@ -41,18 +41,7 @@ export const es = {
     "configurations-version": "Versión:",
     "configurations-version-after": "o posteriores",
     "configurations-interface-version": "Versión de la interfaz:",
-    "configurations-interface-version-number": "Versión: 2.0.0",
-    "configurations-hardware-intel":
-      "Intel® Celeron® o 8th Generation Intel CoreTM i3 / i5 Processor",
-    "configurations-hardware-ram": "Memoria Ram de 8GB (no actualizable)",
-    "configurations-hardware-ssd": "M.2 SSD de 1TB",
-    "configurations-hardware-hdmi":
-      "HDMI (para modelos 8145UE) / DP (para otros)",
-    "configurations-hardware-usb": "2x USB 3.2 Gen 2",
-    "configurations-hardware-ethernet":
-      "2x Ethernet (1x Ethernet para Celeron)",
-    "configurations-hardware-periferic":
-      "Conector combinado de auriculares/micrófono (3.5mm)",
+    "configurations-interface-version-number": "Versión:",
     "configurations-battery": "Bateria:",
     "configurations-battery-type": "Tipo: Batería externa recargable de litio",
     "configurations-battery-duration":

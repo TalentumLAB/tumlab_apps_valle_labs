@@ -16,6 +16,16 @@ export async function getLicense() {
   }
 }
 
+export async function getSpecifications() {
+  try {
+    const response = await fetch("/info/specifications.json");
+    const data = await response.json();
+    return data.specifications;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 const { configurations, slider, header, sectionApps } = textChangeLanguage();
 
 export const infoSlider = [

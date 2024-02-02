@@ -1,0 +1,15 @@
+{
+  "specifications": {
+    "operating-system": "Ubuntu Server v20.04",
+    "interface-version": "2.0.0",
+    "processor": "Intel® Celeron® o 8th Generation Intel CoreTM i3 / i5 Processor",
+    "ram": "RAM 8GB",
+    "ssd": "M.2 SSD de 1TB",
+    "hdmi": "HDMI (para modelos 8145UE) / DP (para otros)",
+    "usb": "2x USB 3.2 Gen 2",
+    "ethernet": "2x Ethernet (1x Ethernet para Celeron)",
+    "periferic": "Conector combinado de auriculares/micrófono (3.5mm)",
+    "battery-type": "Batería externa recargable de litio",
+    "battery-duration": "Hasta 4 o 6 horas de funcionamiento dependiendo del uso"
+  }
+}

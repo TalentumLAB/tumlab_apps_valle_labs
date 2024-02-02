@@ -41,18 +41,7 @@ export const en = {
     "configurations-version": "Version:",
     "configurations-version-after": "or later",
     "configurations-interface-version": "Interface version:",
-    "configurations-interface-version-number": "Version: 2.0.0",
-    "configurations-hardware-intel":
-      "Intel® Celeron® or 8th Generation Intel CoreTM i3/i5 Processor",
-    "configurations-hardware-ram": "8GB RAM (non-upgradable)",
-    "configurations-hardware-ssd": "1TB M.2 SSD",
-    "configurations-hardware-hdmi":
-      "HDMI (for 8145UE models) / DP (for others)",
-    "configurations-hardware-usb": "2x USB 3.2 Gen 2",
-    "configurations-hardware-ethernet": "2x Ethernet (1x Ethernet for Celeron)",
-    "configurations-hardware-periferic":
-      "Combined headphone/microphone jack (3.5mm)",
-
+    "configurations-interface-version-number": "Version:",
     "configurations-battery": "Battery:",
     "configurations-battery-type":
       "Type: Rechargeable lithium external battery",
@@ -60,7 +49,6 @@ export const en = {
       "Duration: Up to 4 or 6 hours of operation depending on usage",
     "configurations-battery-description":
       "Note: These specifications are subject to changes in other Tumlab devices for product improvements and updates.",
-
     "configurations-license-description":
       "Below, you will find the serial number for the license:",
     "configurations-license-activation": "Activation date:",
