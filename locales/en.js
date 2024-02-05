@@ -39,7 +39,6 @@ export const en = {
     "configurations-specifications-title": "Device Specifications",
     "configurations-operating-system": "Operating system",
     "configurations-version": "Version:",
-    "configurations-version-after": "or later",
     "configurations-interface-version": "Interface version:",
     "configurations-interface-version-number": "Version:",
     "configurations-battery": "Battery:",

@@ -14,7 +14,7 @@ import { textChangeLanguage } from "./locales/index.js";
 
 const { slider, modal, configurations } = textChangeLanguage();
 
-const SHOW_INTRO = true;
+const SHOW_INTRO = false;
 
 const intro = document.querySelector(".intro");
 const header = document.querySelector(".header");
@@ -370,38 +370,75 @@ const renderConfigMenu = async () => {
 
   const specifications = await getSpecifications();
 
+  const excludeItems = [
+    "operating-system",
+    "interface-version",
+    "battery-type",
+    "battery-duration",
+  ];
+
   if (specificationsIndex !== -1) {
+    const specificationsListItems = Object.entries(specifications)
+      .filter(([key]) => !excludeItems.includes(key))
+      .map(([_, text]) => {
+        if (text.show) {
+          return `<li>${text.value}</li>`;
+        }
+      })
+      .join("");
+
+    const content = `<h2 data-section="configurations" data-value="configurations-specifications-title">${
+      configurations["configurations-specifications-title"]
+    }</h2>
+
+     ${
+       specifications["operating-system"].show
+         ? `<h5 data-section="configurations" data-value="configurations-operating-system">${configurations["configurations-operating-system"]}</h5>
+    
+      
+       <ul class="config-mini-list">  
+        <li>
+            <span
+              data-section="configurations"
+              data-value="configurations-version"
+            >
+              ${configurations["configurations-version"]}
+            </span>
+            <strong> ${specifications["operating-system"].value}</strong>
+          </li>
+     </ul>`
+         : ""
+     }
+     
+     ${
+       specifications["interface-version"].show
+         ? `<h5 data-section="configurations" data-value="configurations-interface-version">${configurations["configurations-interface-version"]}</h5>
+     <ul class="config-mini-list">
+       <li><span data-section="configurations" data-value="configurations-interface-version-number">${configurations["configurations-interface-version-number"]}</span> ${specifications["interface-version"].value}</li>
+     </ul>
+     `
+         : ""
+     }
+     <h5>Hardware</h5>
+     <ul class="config-mini-list">
+     ${specificationsListItems}
+     </ul>
+     
+     <h5 data-section="configurations" data-value="configurations-battery">${
+       configurations["configurations-battery"]
+     }</h5>
+  <ul class="config-mini-list">
+    <li>${specifications["battery-type"].value}</li>
+    <li>${specifications["battery-duration"].value}</li>
+  </ul>
+  <p data-section="configurations" data-value="configurations-battery-description">${
+    configurations["configurations-battery-description"]
+  }</p>`;
+
     menuConfigurations[specificationsIndex].content = `
     <div class="config-list-item">
-  <h2 data-section="configurations" data-value="configurations-specifications-title">${configurations["configurations-specifications-title"]}</h2>
-
-  <h5 data-section="configurations" data-value="configurations-operating-system">${configurations["configurations-operating-system"]}</h5>
-  <ul class="config-mini-list">
-    <li>
-      <span data-section="configurations" data-value="configurations-version">${configurations["configurations-version"]}</span><strong> ${specifications["operating-system"]}</strong> <span data-section="configurations" data-value="configurations-version-after">${configurations["configurations-version-after"]}</span>
-    </li>
-  </ul>
-  <h5 data-section="configurations" data-value="configurations-interface-version">${configurations["configurations-interface-version"]}</h5>
-  <ul class="config-mini-list">
-    <li><span data-section="configurations" data-value="configurations-interface-version-number">${configurations["configurations-interface-version-number"]}</span> ${specifications["interface-version"]}</li>
-  </ul>
-  <h5>Hardware</h5>
-  <ul class="config-mini-list">
-    <li>${specifications.processor}</li>
-    <li>${specifications.ram}</li>
-    <li>${specifications.ssd}</li>
-    <li>${specifications.hdmi}</li>
-    <li>${specifications.usb}</li>
-    <li>${specifications.ethernet}</li>
-    <li>${specifications.periferic}</li>
-  </ul>
-  <h5 data-section="configurations" data-value="configurations-battery">${configurations["configurations-battery"]}</h5>
-  <ul class="config-mini-list">
-    <li>${specifications["battery-type"]}</li>
-    <li>${specifications["battery-duration"]}</li>
-  </ul>
-  <p data-section="configurations" data-value="configurations-battery-description">${configurations["configurations-battery-description"]}</p>
-</div>
+      ${content} 
+    </div>
     `;
   }
 
