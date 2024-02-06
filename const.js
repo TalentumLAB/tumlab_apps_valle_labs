@@ -1,4 +1,5 @@
 import { textChangeLanguage } from "./locales/index.js";
+import tumlab from "./info/agent.json" assert { type: "json" };
 
 export const LANGUAGE = "language";
 export const ACTIVATION_DATE = "18/01/2024";
@@ -179,12 +180,12 @@ export const headerMenulist = [
   {
     id: "talentum-resources",
     name: `${header["header-category-talentum-resources"]}`,
-    is_enable: false,
+    is_enable: true,
   },
   {
     id: "digital-tools",
     name: `${header["header-category-digital-tools"]}`,
-    is_enable: true,
+    is_enable: false,
   },
   {
     id: "simulators",
@@ -230,7 +231,7 @@ export const apps = [
       {
         id: "steam-classrooms-patia",
         order: 3,
-        is_show: true,
+        is_show: false,
         thumbnail: "./assets/recursos-talentum/patia_thumbnail.webp",
         video: "./assets/recursos-talentum/videos/recursos-talentum-patia.mp4",
         title: `${sectionApps["app-steam-classrooms-patia-title"]}`,
@@ -240,7 +241,7 @@ export const apps = [
       {
         id: "steam-classrooms-valle",
         order: 4,
-        is_show: true,
+        is_show: false,
         thumbnail: "./assets/recursos-talentum/steam-valle_thumbnail.webp",
         video:
           "./assets/recursos-talentum/videos/recursos-talentum-steam-valle.mp4",
@@ -257,7 +258,7 @@ export const apps = [
       {
         id: "universum",
         order: 1,
-        is_show: true,
+        is_show: false,
         thumbnail: "./assets/herramientas-digitales/universum_thumbnail.webp",
         video:
           "./assets/herramientas-digitales/videos/herramientas-digitales-universum.mp4",
@@ -284,14 +285,14 @@ export const apps = [
       {
         id: "simulators-spanish",
         order: 2,
-        is_show: false,
+        is_show: true,
         thumbnail: "./assets/simuladores/simulators-spanish_thumbnail.webp",
         video: "./assets/simuladores/videos/simulators-spanish.mov",
         title: `${sectionApps["app-simulators-spanish-title"]}`,
         description: `${sectionApps["app-simulators-spanish-description"]}`,
+        url: "http://tumlab.local:8087/viewer#phet_es_2023-01/A/index.html",
         ltitle: `${sectionApps["app-simulators-spanish-license-title"]}`,
         ldescription: `${sectionApps["app-simulators-spanish-license-description"]}`,
-        url: "http://tumlab.local:8087/phet_es_2022-12/A/index.html",
       },
       {
         id: "simulators-english",
@@ -313,7 +314,7 @@ export const apps = [
       {
         id: "apache",
         order: 1,
-        is_show: true,
+        is_show: false,
         thumbnail: "./assets/infraestructura-datos/superset_thumbnail.webp",
         video:
           "./assets/infraestructura-datos/videos/infraestructura-datos-apache-superset.mp4",
@@ -336,9 +337,9 @@ export const apps = [
           "./assets/recursos-educativos/videos/recursos-educativos-wikipedia.mp4",
         title: `${sectionApps["app-wikipedia-title"]}`,
         description: `${sectionApps["app-wikipedia-description"]}`,
+        url: "http://tumlab.local:8087/viewer#wikipedia_es_all_maxi_2023-10/A/Wikipedia:Offline",
         ltitle: `${sectionApps["app-wikipedia-license-title"]}`,
         ldescription: `${sectionApps["app-wikipedia-license-description"]}`,
-        url: "http://tumlab.local:8087/viewer#wikipedia_en_all_maxi_2023-11/A/User:The_other_Kiwix_guy/Landing",
       },
 
       {
@@ -383,15 +384,15 @@ export const apps = [
       {
         id: "krita",
         order: 5,
-        is_show: true,
+        is_show: false,
         thumbnail: "./assets/recursos-educativos/krita_thumbnail.webp",
         video:
           "./assets/recursos-educativos/videos/recursos-educativos-krita.mp4",
         title: `${sectionApps["app-krita-title"]}`,
         description: `${sectionApps["app-krita-description"]}`,
+        url: "http://tumlab.local/krita/krita-x64-5.2.2-setup.exe",
         ltitle: `${sectionApps["app-krita-license-title"]}`,
         ldescription: `${sectionApps["app-krita-license-description"]}`,
-        url: "http://192.168.4.1:8086",
       },
     ],
   },
