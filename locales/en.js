@@ -83,27 +83,41 @@ export const en = {
       "Learn the essential fundamentals of managing technological waste to safeguard and improve the environment and people's health.",
     "app-simulators-spanish-title": "Simulators spanish",
     "app-simulators-spanish-description":
-      "Performs interactive simulations in Physics, Chemistry and Science based on the PhET project at the University of Colorado, Boulder. These resources are supported by extensive educational research and engage students through an intuitive and playful environment where they learn by exploring and discovering.",
+      "Performs interactive simulations in Physics, Chemistry and Science based on the PhET project at the University of Colorado, Boulder, under licence CC-BY-4.0. These resources are supported by extensive educational research and engage students through an intuitive and playful environment where they learn by exploring and discovering.",
+	  "app-simulators-spanish-license-title":"License",
+	  "app-simulators-spanish-license-description":"https://phet.colorado.edu/es/licensing",
     "app-simulators-english-title": "Simulators",
     "app-simulators-english-description":
-      "Conduct interactive simulations in physics, chemistry, and sciences based on the PhET project from the University of Colorado, Boulder. These resources are supported by extensive educational research and engage students through an intuitive and playful environment, where they learn by exploring and discovering.",
+      "Conduct interactive simulations in physics, chemistry, and sciences based on the PhET project from the University of Colorado, Boulder, under licence CC-BY-4.0. These resources are supported by extensive educational research and engage students through an intuitive and playful environment, where they learn by exploring and discovering.",
+	  "app-simulators-english-license-title":"License",
+	  "app-simulators-english-license-description":"https://phet.colorado.edu/es/licensing",
     "app-apache-title": "Apache Superset",
     "app-apache-description":
       "Superset is fast, lightweight, intuitive, and offers a wide range of options that allow users of all levels to explore and visualize their data. From simple line charts to highly detailed geospatial graphs, Superset provides you with the tools you need.",
     "app-wikipedia-title": "Wikipedia: Free encyclopedia",
     "app-wikipedia-description":
-      "Wikipedia is a free, multilingual, collaboratively edited encyclopedia with over 6.7 million reference articles in English and other languages. It is managed by the Wikimedia Foundation, a non-profit organization funded through donations.",
+      "Wikipedia is a free, multilingual, collaboratively edited encyclopedia with over 6.7 million reference articles in English and other languages. It is managed by the Wikimedia Foundation, a non-profit organization funded through donations. Wikipedia is available under the CC BY-SA 3.0 and GFDL license.",
+	  "app-wikipedia-license-title":"License",
+	  "app-wikipedia-license-description":"https://en.wikipedia.org/wiki/Wikipedia:Copyrights",
     "app-media-cms-title": "Media CMS",
     "app-media-cms-description":
-      "A content management system that allows viewing and sharing media. It is developed to meet the needs of the most modern web platforms.",
+      "A content management system that allows viewing and sharing media. It is developed to meet the needs of the most modern web platforms. Contains videos and exercises taken from Khan Academy under the CC BY-NC-SA license. Note: All Khan Academy content is available for free at (www.khanacademy.org).",
+	  "app-media-cms-license-title":"Terms of Service/License",
+	  "app-media-cms-license-description":"https://www.khanacademy.org/about/tos#proprietary",
     "app-open-street-map-title": "OpenStreetMap",
     "app-open-street-map-description":
-      "OpenStreetMap is a collaborative project to create editable and free maps, generated from geographic information captured with mobile GPS devices, orthophotos, and other free sources.",
+      "OpenStreetMap is a collaborative project to create editable and free maps, generated from geographic information captured with mobile GPS devices, orthophotos, and other free sources. The project is licensed under the ODbL (Open Database License).",
+	  "app-open-street-map-license-title":"Terms of Use/License",
+	  "app-open-street-map-license-description":"https://osmfoundation.org/wiki/Terms_of_Use",
     "app-scratch-title": "Scratch",
     "app-scratch-description":
-      "The largest programming community for children developed by the Scratch Foundation. Its simple language allows them to create digital stories, games, and animations, while fostering computational thinking, creativity, problem-solving, and equality. Discover Scratch and inspire your children to explore the digital world!",
+      "The largest programming community for children developed by the Scratch Foundation. Its simple language allows them to create digital stories, games, and animations, while fostering computational thinking, creativity, problem-solving, and equality. Discover Scratch and inspire your children to explore the digital world! The use of Scratch and its user content is permitted under the CC BY-SA 2.0 license.",
+	  "app-scratch-license-title":"Terms of Use/License",
+	  "app-scratch-license-description":"https://scratch.mit.edu/terms_of_use",
     "app-krita-title": "Krita",
     "app-krita-description":
-      "Discover Krita, the gem od digital painting. Free and open-source, created by artists for artists. Ideal for conceptual art, textures, illustrations, and comics. Unleash your creativity with innovative tools and powerful features for beginners and experts alike!",
+      "Discover Krita, the gem od digital painting. Free and open-source licensed under the GPL, created by artists for artists. Ideal for conceptual art, textures, illustrations, and comics. Unleash your creativity with innovative tools and powerful features for beginners and experts alike!",
+	  "app-krita-license-title":"License",
+	  "app-krita-license-description":"https://krita.org/en/about/license",
   },
 };

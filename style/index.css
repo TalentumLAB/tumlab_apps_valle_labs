@@ -533,6 +533,17 @@ hr {
   letter-spacing: 0.25px;
 }
 
+.source .source-link {
+  max-width: 628px;
+  font-family: "Open Sans";
+  font-size: clamp(12px, 2vw, 18px);
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: underline;
+  line-height: 24px;
+  letter-spacing: 0.25px;
+}
+
 .sources-apps {
   display: flex;
   flex-wrap: wrap;

@@ -289,6 +289,8 @@ export const apps = [
         video: "./assets/simuladores/videos/simulators-spanish.mov",
         title: `${sectionApps["app-simulators-spanish-title"]}`,
         description: `${sectionApps["app-simulators-spanish-description"]}`,
+        ltitle: `${sectionApps["app-simulators-spanish-license-title"]}`,
+        ldescription: `${sectionApps["app-simulators-spanish-license-description"]}`,
         url: "http://tumlab.local:8087/phet_es_2022-12/A/index.html",
       },
       {
@@ -299,6 +301,8 @@ export const apps = [
         video: "./assets/simuladores/videos/simulators-english.mov",
         title: `${sectionApps["app-simulators-english-title"]}`,
         description: `${sectionApps["app-simulators-english-description"]}`,
+        ltitle: `${sectionApps["app-simulators-english-license-title"]}`,
+        ldescription: `${sectionApps["app-simulators-english-license-description"]}`,
         url: "http://tumlab.local:8087/viewer#phet_en_all_2023-04/A/index.html",
       },
     ],
@@ -332,6 +336,8 @@ export const apps = [
           "./assets/recursos-educativos/videos/recursos-educativos-wikipedia.mp4",
         title: `${sectionApps["app-wikipedia-title"]}`,
         description: `${sectionApps["app-wikipedia-description"]}`,
+        ltitle: `${sectionApps["app-wikipedia-license-title"]}`,
+        ldescription: `${sectionApps["app-wikipedia-license-description"]}`,
         url: "http://tumlab.local:8087/viewer#wikipedia_en_all_maxi_2023-11/A/User:The_other_Kiwix_guy/Landing",
       },
 
@@ -343,6 +349,8 @@ export const apps = [
         bg: "./assets/recursos-educativos/mediacms_bg.webp",
         title: `${sectionApps["app-media-cms-title"]}`,
         description: `${sectionApps["app-media-cms-description"]}`,
+        ltitle: `${sectionApps["app-media-cms-license-title"]}`,
+        ldescription: `${sectionApps["app-media-cms-license-description"]}`,
         url: "http://tumlab.local:8085",
       },
       {
@@ -355,6 +363,8 @@ export const apps = [
           "./assets/recursos-educativos/videos/recursos-educativos-open-street-map.mp4",
         title: `${sectionApps["app-open-street-map-title"]}`,
         description: `${sectionApps["app-open-street-map-description"]}`,
+        ltitle: `${sectionApps["app-open-street-map-license-title"]}`,
+        ldescription: `${sectionApps["app-open-street-map-license-description"]}`,
         url: "http://tumlab.local:8081",
       },
       {
@@ -364,8 +374,10 @@ export const apps = [
         thumbnail: "./assets/recursos-educativos/scratch_thumbnail.webp",
         video:
           "./assets/recursos-educativos/videos/recursos-educativos-scratch.mp4",
-        title: `${sectionApps["app-scratch-title"]}`,
-        description: `${sectionApps["app-scratch-description"]}`,
+		title: `${sectionApps["app-scratch-title"]}`,
+		description: `${sectionApps["app-scratch-description"]}`,
+		ltitle: `${sectionApps["app-scratch-license-title"]}`,
+        ldescription: `${sectionApps["app-scratch-license-description"]}`,
         url: "http://192.168.4.1:8086",
       },
       {
@@ -377,6 +389,8 @@ export const apps = [
           "./assets/recursos-educativos/videos/recursos-educativos-krita.mp4",
         title: `${sectionApps["app-krita-title"]}`,
         description: `${sectionApps["app-krita-description"]}`,
+        ltitle: `${sectionApps["app-krita-license-title"]}`,
+        ldescription: `${sectionApps["app-krita-license-description"]}`,
         url: "http://192.168.4.1:8086",
       },
     ],

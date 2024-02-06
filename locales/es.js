@@ -79,27 +79,41 @@ export const es = {
       "Aprende los fundamentos esenciales de gestión de residuos tecnológicos para salvaguardar y mejorar el medio ambiente y la salud de las personas.",
     "app-simulators-spanish-title": "Simuladores: Español",
     "app-simulators-spanish-description":
-      "Realiza simulaciones interactivas de física, química y ciencias basadas en el proyecto PhET de la Universidad de Colorado, en Boulder. Estos recursos están respaldados por una investigación educativa extensiva e involucran a los estudiantes a través de un entorno intuitivo y lúdico, en el que aprenden  explorando y descubriendo.",
+      "Realiza simulaciones interactivas de física, química y ciencias basadas en el proyecto PhET de la Universidad de Colorado, en Boulder, bajo licencia CC-BY-4.0. Estos recursos están respaldados por una investigación educativa extensiva e involucran a los estudiantes a través de un entorno intuitivo y lúdico, en el que aprenden  explorando y descubriendo.",
+	  "app-simulators-spanish-license-title":"Licencia",
+	  "app-simulators-spanish-license-description":"https://phet.colorado.edu/es/licensing",
     "app-simulators-english-title": "Simuladores: Inglés",
     "app-simulators-english-description":
-      "Realice simulaciones interactivas de física, química y ciencias basadas en el proyecto PhET de la Universidad de Colorado, Boulder. Estos recursos están respaldados por una amplia investigación educativa e involucran a los alumnos a través de un entorno intuitivo y lúdico, en el que aprenden explorando y descubriendo.",
+      "Realice simulaciones interactivas de física, química y ciencias basadas en el proyecto PhET de la Universidad de Colorado, Boulder, bajo licencia CC-BY-4.0. Estos recursos están respaldados por una amplia investigación educativa e involucran a los alumnos a través de un entorno intuitivo y lúdico, en el que aprenden explorando y descubriendo.",
+	  "app-simulators-english-license-title":"Licencia",
+	  "app-simulators-english-license-description":"https://phet.colorado.edu/es/licensing",
     "app-apache-title": "Apache Superset",
     "app-apache-description":
       "Superset es rápido, ligero, intuitivo y ofrece una amplia gama de opciones que permiten a los usuarios de todos los niveles explorar y visualizar sus datos. Desde simples gráficos de líneas hasta gráficos geoespaciales altamente detallados, Superset te proporciona las herramientas que necesitas.",
     "app-wikipedia-title": "Wikipedia: Enciclopedia libre",
     "app-wikipedia-description":
-      "Wikipedia es una enciclopedia libre, ​políglota y editada de manera colaborativa, con más de 6.7 millones de artículos de consulta en inglés y otros idiomas. Es gestionada por la Fundación Wikimedia, una organización sin fines de lucro financiada a través de donaciones.",
+      "Wikipedia es una enciclopedia libre, ​políglota y editada de manera colaborativa, con más de 6.7 millones de artículos de consulta en inglés y otros idiomas. Es gestionada por la Fundación Wikimedia, una organización sin fines de lucro financiada a través de donaciones. Wikipedia esta disponible bajo la licencia CC BY-SA 3.0 y GFDL.",
+	  "app-wikipedia-license-title":"Licencia",
+	  "app-wikipedia-license-description":"https://en.wikipedia.org/wiki/Wikipedia:Copyrights",
     "app-media-cms-title": "Media CMS",
     "app-media-cms-description":
-      "Un sistema de gestión de contenidos que permite ver y compartir medios. Está desarrollado para satisfacer las necesidades de las plataformas web más modernas.",
+      "Un sistema de gestión de contenidos que permite ver y compartir medios. Está desarrollado para satisfacer las necesidades de las plataformas web más modernas. Contiene videos y ejercicios extraidos de Khan Academy bajo la licencia CC BY-NC-SA. Nota: todo el contenido de Khan Academy está disponible gratuitamente en (www.khanacademy.org).",
+	  "app-media-cms-license-title":"Terminos de Uso/Licencia",
+	  "app-media-cms-license-description":"https://www.khanacademy.org/about/tos#proprietary",
     "app-open-street-map-title": "OpenStreetMap",
     "app-open-street-map-description":
-      "OpenStreetMap es un proyecto colaborativo para crear mapas editables y libres, creados a partir de información geográfica capturada con dispositivos GPS móviles, ortofotografías y otras fuentes libres.",
+      "OpenStreetMap es un proyecto colaborativo para crear mapas editables y libres, creados a partir de información geográfica capturada con dispositivos GPS móviles, ortofotografías y otras fuentes libres. El proyecto esta licenciado bajo la ODbL (Open Database License).",
+	  "app-open-street-map-license-title":"Terminos de Uso/Licencia",
+	  "app-open-street-map-license-description":"https://osmfoundation.org/wiki/Terms_of_Use",
     "app-scratch-title": "Scratch",
     "app-scratch-description":
-      "La mayor comunidad de programación para niños desarrollada por la Fundación Scratch. Su lenguaje sencillo les permite crear historias digitales, juegos y animaciones, además de fomentar el pensamiento computacional, la creatividad, la resolución de problemas y la igualdad. ¡Descubre Scratch e inspira a tus hijos a explorar el mundo digital!",
+      "La mayor comunidad de programación para niños desarrollada por la Fundación Scratch. Su lenguaje sencillo les permite crear historias digitales, juegos y animaciones, además de fomentar el pensamiento computacional, la creatividad, la resolución de problemas y la igualdad. ¡Descubre Scratch e inspira a tus hijos a explorar el mundo digital! El uso de Scratch y su contenido de usuario esta permitido bajo la licencia CC BY-SA 2.0.",
+	  "app-scratch-license-title":"Terminos de Uso/Licencia",
+	  "app-scratch-license-description":"https://scratch.mit.edu/terms_of_use",
     "app-krita-title": "Krita",
     "app-krita-description":
-      "Descubre Krita, la joya de la pintura digital. Gratuito y de código libre, creado por artistas para artistas. Ideal para arte conceptual, texturas, ilustraciones y cómics. ¡Desata tu creatividad con herramientas innovadoras y potentes funciones para principiantes y expertos!",
+      "Descubre Krita, la joya de la pintura digital. Gratuito y de código libre, creado por artistas para artistas. Krita esta bajo la licencia de GPL, Versión 3. Ideal para arte conceptual, texturas, ilustraciones y cómics. ¡Desata tu creatividad con herramientas innovadoras y potentes funciones para principiantes y expertos!",
+	  "app-krita-license-title":"Licencia",
+	  "app-krita-license-description":"https://krita.org/en/about/license",
   },
 };

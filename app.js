@@ -297,9 +297,12 @@ const renderContent = (categoryName) => {
       <h2 data-section="sectionApps" data-value=${`app-${app.children[index].id}-title`} class="source-title">${
     app.children[index].title
   }</h2>
-      <p data-section="sectionApps" data-value=${`app-${app.children[index].id}-description`} class="source-description">
-      ${app.children[index].description}
-      </p>
+  <p data-section="sectionApps" data-value=${`app-${app.children[index].id}-description`} class="source-description">
+  ${app.children[index].description}
+  </p>
+  <a style=${app.children[index].ldescription ? "display:block;" : "display:none;"} data-section="sectionApps" data-value=${`app-${app.children[index].id}-license-description`} 
+  href="${app.children[index].ldescription}" target="_blank" class="source-link">${app.children[index].ltitle}</a>
+  <br>
       <a href=${
         app.children[index].url
       } target="_blank" rel="noopener noreferrer" title="play" class="link-btn primary-button btn-play">
@@ -344,6 +347,10 @@ const renderContent = (categoryName) => {
 
       let title = document.querySelector(".source-title");
       title.textContent = selectedChild.title;
+
+      let ldescription = document.querySelector(".source-link");
+      ldescription.textContent = selectedChild.ltitle;
+      ldescription.href = selectedChild.ldescription;
 
       let description = document.querySelector(".source-description");
       description.textContent = selectedChild.description;
