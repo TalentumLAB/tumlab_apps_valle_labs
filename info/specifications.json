@@ -10,15 +10,15 @@
     },
     "processor": {
       "show": true,
-      "value": "Intel® Celeron® o 8th Generation Intel CoreTM i3 / i5 Processor"
+      "value": "1x 8th Generation Intel® Core™ i5-8365U vPro® Processor(Core™ i5-8365U vPro®)"
     },
     "ram": {
       "show": true,
-      "value": "RAM 8GB"
+      "value": "1x 8GB DDR4 2666"
     },
     "ssd": {
       "show": true,
-      "value": "M.2 SSD de 1TB"
+      "value": "NVME SSD de 1TB"
     },
     "hdmi": {
       "show": true,
