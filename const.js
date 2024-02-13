@@ -384,7 +384,7 @@ export const apps = [
       {
         id: "krita",
         order: 5,
-        is_show: false,
+        is_show: true,
         thumbnail: "./assets/recursos-educativos/krita_thumbnail.webp",
         video:
           "./assets/recursos-educativos/videos/recursos-educativos-krita.mp4",
