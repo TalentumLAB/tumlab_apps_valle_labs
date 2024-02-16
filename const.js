@@ -180,7 +180,7 @@ export const headerMenulist = [
   {
     id: "talentum-resources",
     name: `${header["header-category-talentum-resources"]}`,
-    is_enable: true,
+    is_enable: false,
   },
   {
     id: "digital-tools",
