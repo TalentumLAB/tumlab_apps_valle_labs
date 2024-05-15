@@ -180,7 +180,7 @@ export const headerMenulist = [
   {
     id: "talentum-resources",
     name: `${header["header-category-talentum-resources"]}`,
-    is_enable: false,
+    is_enable: true,
   },
   {
     id: "digital-tools",
@@ -221,7 +221,7 @@ export const apps = [
       {
         id: "lms",
         order: 2,
-        is_show: true,
+        is_show: false,
         thumbnail: "./assets/recursos-talentum/lms_thumbnail.webp",
         video: "./assets/recursos-talentum/videos/recursos-talentum-lms.mp4",
         title: `${sectionApps["app-lms-title"]}`,
@@ -241,7 +241,7 @@ export const apps = [
       {
         id: "steam-classrooms-valle",
         order: 4,
-        is_show: false,
+        is_show: true,
         thumbnail: "./assets/recursos-talentum/steam-valle_thumbnail.webp",
         video:
           "./assets/recursos-talentum/videos/recursos-talentum-steam-valle.mp4",
