@@ -119,5 +119,32 @@ export const en = {
       "Discover Krita, the gem od digital painting. Free and open-source licensed under the GPL, created by artists for artists. Ideal for conceptual art, textures, illustrations, and comics. Unleash your creativity with innovative tools and powerful features for beginners and experts alike!",
 	  "app-krita-license-title":"License",
 	  "app-krita-license-description":"https://krita.org/en/about/license",
-  },
+	  "app-segvial-title": "Educational game: Demos via a la vida",
+	  "app-segvial-description":
+		"Dive into an educational and engagin experience where you'll discover traffic laws and road safety through gamified content. Interact dynamiclly and participatively to enhance your understanding and retention of key concepts!",
+		"app-segvialsi-title": "Demos via a la vida: Information System",
+		"app-segvialsi-description":
+		  "brings indicators for each of the five competencies based on students' performance in various tools: Videogames, Interactive Booklets, Institutional Kit, and Three-dimensional Content.",
+		  "app-vallemagico-title": "Valle Mágico: Educational game",
+		  "app-vallemagico-description":
+			"Discover 'Valle Mágico!' An exciting educational proposal designed to unleash the potential of each student and ensure quality education under principles of inclusion.",
+			"app-vallemagicosi-title": "Information System:  Valle Mágico",
+			"app-vallemagicosi-description":
+			  "Learn specific data related to students' performance by competencies and assessed areas in the various mini-games of 'Valle Mágico'.",
+			  "app-sapere-title": "Educational Game: Sapere Aude",
+			  "app-sapere-description":
+				"Create projects with innovative ideas using the Design Thinking methodology.",
+				"app-saperesi-title": "Sapere Aude: Information system",
+				"app-saperesi-description":
+				  "Gather and organize information from the projects and ideas created in the gamified experience of Sapere Aude.",
+				  "app-canvassi-title": "Emprender esta en vos: Information system",
+				  "app-canvassi-description":
+					"Formulate and build business ideas with tools designed for teachers and students of educational institutions in Valle del Cauca.",
+					"app-cartillasvalle-title": "Cartillas Pedagogicas Valle",
+					"app-cartillasvalle-description":
+					  "Encourage the integration, application, and development of pedagogical models presented in the five booklets designed by the Ministry of Education, through their incorporation into various educational areas and processes.",
+					  "app-catedra-title": "Educational Game: Cátedra de Paz",
+					  "app-catedra-description":
+						"Enhance your teaching and promote the Peace Academic Program and civic competency standards through hypothetical situations.",
+			},
 };

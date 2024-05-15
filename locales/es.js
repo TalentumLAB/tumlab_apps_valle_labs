@@ -115,5 +115,32 @@ export const es = {
       "Descubre Krita, la joya de la pintura digital. Gratuito y de código libre, creado por artistas para artistas. Krita esta bajo la licencia de GPL, Versión 3. Ideal para arte conceptual, texturas, ilustraciones y cómics. ¡Desata tu creatividad con herramientas innovadoras y potentes funciones para principiantes y expertos!",
 	  "app-krita-license-title":"Licencia",
 	  "app-krita-license-description":"https://krita.org/en/about/license",
+	  "app-segvial-title": "Juego educativo: Demos via a la vida",
+	  "app-segvial-description":
+		"Esta plataforma está diseñada para brindar a los usuarios una experiencia educativa y entretenida al mismo tiempo. A través de contenido gamificado, se facilita el aprendizaje sobre las leyes de tránsito y la seguridad vial. Los usuarios tienen la oportunidad de interactuar con el material de una manera dinámica y participativa, lo que mejora su comprensión y retención de los conceptos clave",
+		"app-segvialsi-title": "Demos via a la vida: Sistema de información",
+		"app-segvialsi-description":
+		  "El Sistema de Información de Demos vía a la vida brinda indicadores de cada una de las cinco competencias de acuerdo con el desempeño de los estudiantes en las diferentes herramientas: Videojuego, Cartillas interactivas, Kit institucional y Contenidos tridimensionales.",
+		"app-vallemagico-title": "Valle Mágico: Juego educativo",
+		"app-vallemagico-description":
+		  "Conoce datos puntuales relacionados con el desempeño de los estudiantes por competencias y áreas valoradas en los diferentes mini juegos de Valle Mágico.",
+		"app-vallemagicosi-title": "Sistema de información:  Valle Mágico",
+		"app-vallemagicosi-description":
+		  "Plataforma dedicada a la formulación y construcción de ideas de negocio. Diseñada para los docentes y estudiantes de las instituciones educativas del valle del cauca.",
+		"app-sapere-title": "Juego educativo: Sapere Aude",
+		"app-sapere-description":
+		  "Experiencia que permite la creación de proyectos con ideas innovadoras utilizando la metodología Design Thinking",
+		"app-saperesi-title": "Sistema de información: Sapere Aude",
+		"app-saperesi-description":
+		  "Permite la recopilación de información de los proyectos e ideas creadas en la experiencia gamificada de Sapere Aude",
+		"app-canvassi-title": "Emprender esta en vos: Sistema de información",
+		"app-canvassi-description":
+		  "Plataforma dedicada a la formulación y construcción de ideas de negocio. Diseñada para los docentes y estudiantes de las instituciones educativas del valle del cauca.",
+		  "app-cartillasvalle-title": "Cartillas Pedagogicas Valle",
+		  "app-cartillasvalle-description":
+			"Fomenta la integración, aplicación y desarrollo de los modelos pedagógicos presentados en las cinco cartillas diseñadas por el Ministerio de Educación, a través de su incorporación en diversas áreas y procesos educativos.",
+			"app-catedra-title": "Juego educativo: Cátedra de Paz",
+			"app-catedra-description":
+			  "Estrategia didáctica digital para apoyar la enseñanza y promoción de la cátedra de paz y los estándares de competencias ciudadanas, mediante situaciones hipotéticas.",
   },
 };

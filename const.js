@@ -185,7 +185,7 @@ export const headerMenulist = [
   {
     id: "digital-tools",
     name: `${header["header-category-digital-tools"]}`,
-    is_enable: false,
+    is_enable: true,
   },
   {
     id: "simulators",
@@ -256,8 +256,107 @@ export const apps = [
     category_name: `${header["header-category-digital-tools"]}`,
     children: [
       {
-        id: "universum",
+        id: "segvial",
         order: 1,
+        is_show: true,
+        thumbnail: "./assets/herramientas-digitales/segvial.png",
+        bg:
+          "./assets/herramientas-digitales/segvial_bg.png",
+        title: `${sectionApps["app-segvial-title"]}`,
+        description: `${sectionApps["app-segvial-description"]}`,
+        url: "http://tumlab.local:3012",
+      },
+      {
+        id: "segvialsi",
+        order: 2,
+        is_show: true,
+        thumbnail: "./assets/herramientas-digitales/segvialsi.png",
+        bg:
+          "./assets/herramientas-digitales/segvialsi_bg.png",
+        title: `${sectionApps["app-segvialsi-title"]}`,
+        description: `${sectionApps["app-segvialsi-description"]}`,
+        url: "http://tumlab.local:3010",
+      },
+      {
+        id: "vallemagico",
+        order: 3,
+        is_show: true,
+        thumbnail: "./assets/herramientas-digitales/vallemagico.png",
+        bg:
+          "./assets/herramientas-digitales/vallemagico_bg.png",
+        title: `${sectionApps["app-vallemagico-title"]}`,
+        description: `${sectionApps["app-vallemagico-description"]}`,
+        url: "http://tumlab.local:3009",
+      },
+      {
+        id: "vallemagicosi",
+        order: 4,
+        is_show: true,
+        thumbnail: "./assets/herramientas-digitales/vallemagicosi.png",
+        bg:
+          "./assets/herramientas-digitales/vallemagicosi_bg.png",
+        title: `${sectionApps["app-vallemagicosi-title"]}`,
+        description: `${sectionApps["app-vallemagicosi-description"]}`,
+        url: "http://tumlab.local:3008",
+      },
+      {
+        id: "sapere",
+        order: 5,
+        is_show: true,
+        thumbnail: "./assets/herramientas-digitales/sapere.png",
+        bg:
+          "./assets/herramientas-digitales/sapere_bg.png",
+        title: `${sectionApps["app-sapere-title"]}`,
+        description: `${sectionApps["app-sapere-description"]}`,
+        url: "http://tumlab.local:2999",
+      },
+      {
+        id: "saperesi",
+        order: 6,
+        is_show: true,
+        thumbnail: "./assets/herramientas-digitales/saperesi.png",
+        bg:
+          "./assets/herramientas-digitales/saperesi_bg.png",
+        title: `${sectionApps["app-saperesi-title"]}`,
+        description: `${sectionApps["app-saperesi-description"]}`,
+        url: "http://tumlab.local:3003",
+      },
+      {
+        id: "canvassi",
+        order: 7,
+        is_show: true,
+        thumbnail: "./assets/herramientas-digitales/canvassi.png",
+        bg:
+          "./assets/herramientas-digitales/canvassi_bg.png",
+        title: `${sectionApps["app-canvassi-title"]}`,
+        description: `${sectionApps["app-canvassi-description"]}`,
+        url: "http://tumlab.local:3015",
+	},
+	{
+	  id: "catedra",
+	  order: 8,
+	  is_show: true,
+	  thumbnail: "./assets/herramientas-digitales/catedra.png",
+	  bg:
+		"./assets/herramientas-digitales/catedra_bg.png",
+	  title: `${sectionApps["app-catedra-title"]}`,
+	  description: `${sectionApps["app-catedra-description"]}`,
+	  url: "http://tumlab.local:3007",
+	},
+      {
+        id: "cartillasvalle",
+        order: 9,
+        is_show: false,
+        thumbnail: "./assets/herramientas-digitales/cartillasvalle.png",
+        bg:
+          "./assets/herramientas-digitales/cartillasvalle_bg.png",
+        title: `${sectionApps["app-cartillasvalle-title"]}`,
+        description: `${sectionApps["app-cartillasvalle-description"]}`,
+        url: "http://tumlab.local:3004",
+      },
+      {
+        id: "universum",
+        order: 10,
         is_show: false,
         thumbnail: "./assets/herramientas-digitales/universum_thumbnail.webp",
         video:
@@ -268,7 +367,7 @@ export const apps = [
       },
       {
         id: "agau",
-        order: 2,
+        order: 11,
         is_show: false,
         thumbnail: "./assets/herramientas-digitales/agau_thumbnail.webp",
         video:
